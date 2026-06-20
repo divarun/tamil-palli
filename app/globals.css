@@ -10,6 +10,10 @@ body {
   color: var(--foreground);
 }
 
+h1 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
 .tamil-text {
   font-family: "Noto Sans Tamil", "Latha", "Vijaya", "Tamil MN", serif;
 }

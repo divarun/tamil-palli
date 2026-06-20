@@ -29,12 +29,15 @@ export default function ProgressPage() {
     return { level, total: levelTopics.length, done, pct: Math.round((done / levelTopics.length) * 100) };
   });
 
-  const levelColors: Record<string, string> = {
-    novice: "bg-emerald-500",
-    intermediate: "bg-blue-500",
-    advanced: "bg-purple-500",
-    expert: "bg-rose-500",
+  const levelBarColors: Record<string, string> = {
+    novice: "bg-orange-300",
+    intermediate: "bg-orange-400",
+    advanced: "bg-orange-500",
+    expert: "bg-orange-700",
   };
+
+  const nextLesson = lessonPlan.find((l) => !state.lessonChecks[`lesson-${l.lesson}`]);
+  const nextTopic = nextLesson ? topics.find((t) => t.id === nextLesson.topicIds[0]) : null;
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -51,18 +54,32 @@ export default function ProgressPage() {
         </button>
       </div>
 
-      {/* Summary cards */}
+      {/* Next lesson */}
+      {nextTopic && (
+        <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 mb-8 flex items-center justify-between gap-4">
+          <div>
+            <p className="text-xs font-semibold text-orange-500 uppercase tracking-wide mb-0.5">Continue Learning</p>
+            <p className="font-medium text-gray-900 text-sm">{nextLesson?.title}</p>
+            <p className="text-xs text-gray-500 capitalize mt-0.5">{nextTopic.level} · {nextTopic.title}</p>
+          </div>
+          <Link href={nextTopic.lessonRoute} className="shrink-0 px-4 py-2 bg-orange-600 text-white rounded-lg text-sm font-medium hover:bg-orange-700 transition-colors">
+            Continue →
+          </Link>
+        </div>
+      )}
+
+      {/* Summary */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
         {[
-          { label: "Topics Completed", value: `${completedTopics}/${totalTopics}`, sub: `${topicPct}%`, color: "bg-orange-50 border-orange-200" },
-          { label: "Lessons Checked", value: `${doneLessons}/${totalLessons}`, sub: `${lessonPct}%`, color: "bg-blue-50 border-blue-200" },
-          { label: "Tests Taken", value: String(scores.length), sub: "", color: "bg-emerald-50 border-emerald-200" },
-          { label: "Avg Test Score", value: avgScore !== null ? `${avgScore}%` : "—", sub: "", color: "bg-purple-50 border-purple-200" },
+          { label: "Topics Completed", value: `${completedTopics}/${totalTopics}`, sub: `${topicPct}%` },
+          { label: "Lessons Checked", value: `${doneLessons}/${totalLessons}`, sub: `${lessonPct}%` },
+          { label: "Tests Taken", value: String(scores.length), sub: "" },
+          { label: "Avg Test Score", value: avgScore !== null ? `${avgScore}%` : "—", sub: "" },
         ].map((card) => (
-          <div key={card.label} className={`rounded-xl border p-4 ${card.color}`}>
+          <div key={card.label} className="bg-white border border-gray-200 rounded-xl p-4">
             <div className="text-2xl font-bold text-gray-900">{card.value}</div>
             {card.sub && <div className="text-sm text-gray-500">{card.sub}</div>}
-            <div className="text-xs text-gray-500 mt-1">{card.label}</div>
+            <div className="text-xs text-gray-400 mt-1">{card.label}</div>
           </div>
         ))}
       </div>
@@ -71,20 +88,20 @@ export default function ProgressPage() {
       <h2 className="font-semibold text-gray-800 mb-4">Progress by Level</h2>
       <div className="space-y-4 mb-8">
         {levelStats.map(({ level, total, done, pct }) => (
-          <div key={level} className="bg-white border border-orange-100 rounded-xl p-4">
+          <div key={level} className="bg-white border border-gray-200 rounded-xl p-4">
             <div className="flex items-center justify-between mb-2">
               <span className="font-medium text-gray-800 capitalize">{level}</span>
               <span className="text-sm text-gray-500">{done}/{total} topics</span>
             </div>
-            <div className="w-full bg-gray-100 rounded-full h-2.5 mb-1">
-              <div className={`h-2.5 rounded-full transition-all ${levelColors[level]}`} style={{ width: `${pct}%` }} />
+            <div className="w-full bg-gray-100 rounded-full h-2 mb-1">
+              <div className={`h-2 rounded-full transition-all ${levelBarColors[level]}`} style={{ width: `${pct}%` }} />
             </div>
             <div className="text-xs text-gray-400">{pct}% complete</div>
           </div>
         ))}
       </div>
 
-      {/* Completed topics list */}
+      {/* Completed topics */}
       {completedTopics > 0 && (
         <>
           <h2 className="font-semibold text-gray-800 mb-3">Completed Topics</h2>
@@ -104,7 +121,7 @@ export default function ProgressPage() {
           <h2 className="font-semibold text-gray-800 mb-3">Test Scores</h2>
           <div className="space-y-2 mb-8">
             {scores.map(([id, score]) => (
-              <div key={id} className="flex items-center gap-3 bg-white border border-orange-100 rounded-xl px-4 py-3">
+              <div key={id} className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-4 py-3">
                 <span className="text-sm text-gray-600 flex-1 capitalize">{id.replace(/[-_]/g, " ")}</span>
                 <div className="flex items-center gap-2">
                   <div className="w-24 bg-gray-100 rounded-full h-2">
@@ -125,9 +142,10 @@ export default function ProgressPage() {
 
       {completedTopics === 0 && scores.length === 0 && (
         <div className="text-center py-12 text-gray-400">
-          <div className="text-4xl mb-3">📚</div>
-          <p className="text-sm">Start learning to track your progress!</p>
-          <Link href="/" className="mt-4 inline-block text-orange-600 underline text-sm">Choose a level →</Link>
+          <p className="text-sm mb-4">Start learning to track your progress.</p>
+          <Link href="/curriculum" className="text-orange-600 text-sm font-medium hover:text-orange-700">
+            Browse the curriculum →
+          </Link>
         </div>
       )}
     </div>

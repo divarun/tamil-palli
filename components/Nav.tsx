@@ -14,24 +14,21 @@ export function Nav() {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white border-b border-orange-100 sticky top-0 z-50 shadow-sm">
-      <div className="max-w-5xl mx-auto px-4 flex items-center gap-6 h-14">
-        <Link href="/" className="flex items-center gap-2 font-bold text-orange-700 text-lg shrink-0">
-          <span className="text-2xl">🏫</span>
-          <span className="hidden sm:block">Tamil Palli</span>
-          <span className="text-xs text-orange-400 font-normal hidden sm:block">தமிழ் பள்ளி</span>
+    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div className="max-w-5xl mx-auto px-4 flex items-center h-14">
+        <Link href="/" className="flex items-center gap-3 mr-auto shrink-0">
+          <span className="font-bold text-gray-900 text-sm tracking-tight">Tamil Palli</span>
+          <span className="text-orange-500 tamil-text text-sm hidden sm:block">தமிழ் பள்ளி</span>
         </Link>
-        <div className="flex items-center gap-1 ml-auto">
+        <div className="flex items-center gap-1">
           {links.map((l) => {
             const active = pathname === l.href || (l.href !== "/" && pathname.startsWith(l.href));
             return (
               <Link
                 key={l.href}
                 href={l.href}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                  active
-                    ? "bg-orange-100 text-orange-800"
-                    : "text-gray-600 hover:bg-gray-100"
+                className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                  active ? "bg-orange-50 text-orange-700" : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
                 }`}
               >
                 {l.label}

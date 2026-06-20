@@ -7,10 +7,10 @@ import { topics, type Level } from "@/data/curriculum/topics";
 import { useProgress } from "@/hooks/useProgress";
 
 const levelColors: Record<Level, { bg: string; text: string; border: string }> = {
-  novice: { bg: "bg-emerald-50", text: "text-emerald-700", border: "border-emerald-200" },
-  intermediate: { bg: "bg-blue-50", text: "text-blue-700", border: "border-blue-200" },
-  advanced: { bg: "bg-purple-50", text: "text-purple-700", border: "border-purple-200" },
-  expert: { bg: "bg-rose-50", text: "text-rose-700", border: "border-rose-200" },
+  novice: { bg: "bg-amber-50", text: "text-amber-800", border: "border-amber-200" },
+  intermediate: { bg: "bg-orange-50", text: "text-orange-800", border: "border-orange-200" },
+  advanced: { bg: "bg-orange-100", text: "text-orange-900", border: "border-orange-300" },
+  expert: { bg: "bg-amber-100", text: "text-amber-900", border: "border-amber-300" },
 };
 
 export default function CurriculumPage() {
@@ -33,13 +33,13 @@ export default function CurriculumPage() {
           onClick={() => setTab("lessons")}
           className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${tab === "lessons" ? "border-orange-500 text-orange-700" : "border-transparent text-gray-500 hover:text-gray-700"}`}
         >
-          📅 Lesson Plan
+          Lesson Plan
         </button>
         <button
           onClick={() => setTab("library")}
           className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${tab === "library" ? "border-orange-500 text-orange-700" : "border-transparent text-gray-500 hover:text-gray-700"}`}
         >
-          📚 Topic Library
+          Topic Library
         </button>
       </div>
 
@@ -161,7 +161,7 @@ export default function CurriculumPage() {
                         href={`/worksheets?level=${topic.level}`}
                         className="text-sm text-gray-500 hover:text-gray-700"
                       >
-                        📄 {topic.worksheetIds.length} worksheet{topic.worksheetIds.length > 1 ? "s" : ""}
+                        {topic.worksheetIds.length} worksheet{topic.worksheetIds.length > 1 ? "s" : ""}
                       </Link>
                     )}
                   </div>

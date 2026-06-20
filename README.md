@@ -15,21 +15,22 @@ Tamil Palli (தமிழ் பள்ளி — "Tamil School") provides:
 - **Audio pronunciation** via the Web Speech API (`ta-IN` locale) on every letter, word, and sentence
 - **Printable worksheets** — tracing sheets, match sheets, grammar fill-in-blanks, Thirukkural copy sheets
 - **Browser-local progress tracking** — no login, no server, saved in `localStorage`
-- **32-week recommended syllabus** with checkable weekly goals
+- **44-lesson recommended syllabus** with checkable weekly goals
 
 ---
 
 ## Curriculum
 
-Three levels mapped to script literacy → functional Tamil → mastery:
+Four levels mapped to script literacy → functional Tamil → mastery → scholarly depth:
 
 | Level | Duration | Focus |
 |---|---|---|
 | **Novice** (தொடக்கநிலை) | ~8 weeks | 12 vowels, 18 consonants, aytham, numerals 1–100, greetings, colors, family, question words, Grantha letters |
 | **Intermediate** (இடைநிலை) | ~12 weeks | 216 combined letters, reading, parts of speech, 3 tenses, gender, first 4 cases, vocabulary, proverbs, dialogues |
 | **Advanced** (உயர்நிலை) | ~12 weeks | All 8 cases, sandhi rules, complex sentences, formal vs colloquial Tamil, reading comprehension, Thirukkural, essay writing, Sangam literature |
+| **Expert** (நிபுணர்) | ~12 weeks | Advanced verb conjugation, Silappatikaram epic, Tamil poetry & metres (யாப்பிலக்கணம்), translation practice, dialects, linguistics & script history, contemporary media, creative writing |
 
-The weekly plan is a **recommended pace only** — learners can move faster or skip ahead via the Topic Library.
+The lesson plan is a **recommended pace only** — learners can move faster or skip ahead via the Topic Library.
 
 ---
 
@@ -63,7 +64,7 @@ The weekly plan is a **recommended pace only** — learners can move faster or s
 - Works natively in Chrome, Edge, Safari
 
 ### Parent Curriculum View (`/curriculum`)
-- **Weekly Plan tab** — 32-week recommended syllabus, checkbox per week
+- **Weekly Plan tab** — 44-lesson recommended syllabus, checkbox per lesson
 - **Topic Library tab** — all topics browsable by level and tag, linked directly to lessons and worksheets
 
 ---
@@ -72,7 +73,7 @@ The weekly plan is a **recommended pace only** — learners can move faster or s
 
 | Concern | Choice |
 |---|---|
-| Framework | Next.js 15 (App Router) + TypeScript |
+| Framework | Next.js 16 (App Router) + TypeScript |
 | Styling | Tailwind CSS |
 | Audio | Web Speech API (`ta-IN` locale) |
 | Worksheets | Print CSS (`@media print`) |
@@ -86,7 +87,7 @@ The weekly plan is a **recommended pace only** — learners can move faster or s
 ```
 /app                    Next.js App Router pages
   /curriculum           Parent dashboard (weekly plan + topic library)
-  /learn/[level]/[topic] Lesson pages
+  /learn/[level]/[topic] Lesson pages (novice | intermediate | advanced | expert)
   /exercises/[level]/[type] Interactive exercises
   /tests/[level]        Quizzes and assessments
   /worksheets           Printable worksheet browser

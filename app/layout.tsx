@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wdth,wght@100,100..900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wdth,wght@100,100..900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="min-h-full flex flex-col bg-amber-50 font-sans antialiased">
         <Nav />
