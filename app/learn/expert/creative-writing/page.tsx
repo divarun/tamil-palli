@@ -9,7 +9,7 @@ const writingTips = [
   { title: "Use participial chains", desc: "Instead of short choppy sentences, connect actions with verbal participles (வினையெச்சம்). E.g.: 'வந்து, பார்த்து, திரும்பினான்' — 'He came, looked, and returned.'" },
   { title: "Vary your sentence length", desc: "Mix short punchy sentences (ஒரு சொல் வாக்கியம்) with longer complex ones. Classical Tamil masters this — Thirukkural uses exactly 7 words per couplet." },
   { title: "Ground imagery in landscape", desc: "The Sangam tradition ties emotion to landscape (திணை). Describe weather, plants, or setting to show feeling, not tell it." },
-  { title: "Use formal register for narration", desc: "Stories and essays use -கிறான்/-கிறாள् forms for present narration, and -தான்/-ள் for past. Avoid colloquial -றேன்/-றாள் in written Tamil." },
+  { title: "Use formal register for narration", desc: "Stories and essays use -கிறான்/-கிறாள் forms for present narration, and -தான்/-ள் for past. Avoid colloquial -றேன்/-றாள் in written Tamil." },
   { title: "Check case suffixes", desc: "The most common errors in written Tamil are wrong case suffixes. Before finalising, check every noun: who is the subject, object, recipient, location, possessor?" },
 ];
 
@@ -130,6 +130,12 @@ export default function CreativeWritingPage() {
       >
         {done ? "✓ Completed" : "Mark as Complete"}
       </button>
+
+      <div className="flex gap-3 mt-6">
+        <Link href="/learn/expert/contemporary" className="px-4 py-2 border border-rose-200 text-rose-700 rounded-xl text-sm font-medium hover:bg-rose-50 transition-colors">← News & Media</Link>
+        <Link href="/tests/expert" className="px-4 py-2 bg-rose-600 text-white rounded-xl text-sm font-medium hover:bg-rose-700 transition-colors">Take Expert Assessment →</Link>
+        <Link href="/progress" className="px-4 py-2 border border-rose-200 text-rose-700 rounded-xl text-sm font-medium hover:bg-rose-50 transition-colors">View Progress →</Link>
+      </div>
     </div>
   );
 }

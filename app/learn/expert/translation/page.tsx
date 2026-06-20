@@ -139,6 +139,11 @@ export default function TranslationPage() {
       >
         {done ? "✓ Completed" : "Mark as Complete"}
       </button>
+
+      <div className="flex gap-3 mt-6">
+        <Link href="/learn/expert/prosody" className="px-4 py-2 border border-rose-200 text-rose-700 rounded-xl text-sm font-medium hover:bg-rose-50 transition-colors">← Poetry & Metres</Link>
+        <Link href="/learn/expert/dialects" className="px-4 py-2 bg-rose-600 text-white rounded-xl text-sm font-medium hover:bg-rose-700 transition-colors">Next: Tamil Dialects →</Link>
+      </div>
     </div>
   );
 }

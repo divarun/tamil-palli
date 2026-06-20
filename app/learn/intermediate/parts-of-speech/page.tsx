@@ -28,15 +28,15 @@ const partsOfSpeech = [
     pluralRule: "Verbs conjugate with tense suffixes: -ந்தேன் (past), -கிறேன் (present), -வேன் (future)",
   },
   {
-    name: "Adjective",
+    name: "Qualifier / Intensifier",
     tamilName: "உரிச்சொல் (Uricchol)",
-    description: "Describes a noun. Tamil adjectives precede the noun they modify and do not change form.",
+    description: "In traditional Tamil grammar, உரிச்சொல் specifically refers to words that intensify or qualify verbs and other adjectives — degree words and intensifiers. Common noun-modifying words like சிவப்பு, நல்ல, பெரிய are better described as பெயரடை (peyaradai — noun qualifiers), which function like English adjectives. Both precede the noun and do not change form.",
     examples: [
-      { tamil: "சிவப்பு பூ", romanization: "sivappu poo", english: "red flower" },
-      { tamil: "நல்ல குழந்தை", romanization: "nalla kulanthai", english: "good child" },
-      { tamil: "பெரிய வீடு", romanization: "periya veedu", english: "big house" },
+      { tamil: "மிக நன்றாக", romanization: "mika nandraka", english: "very well (மிக = intensifier, உரிச்சொல்)" },
+      { tamil: "மிகவும் சிறந்தது", romanization: "mikavum sirandhadu", english: "excellent (மிகவும் = intensifier)" },
+      { tamil: "நல்ல குழந்தை", romanization: "nalla kulanthai", english: "good child (நல்ல = noun qualifier, பெயரடை)" },
     ],
-    pluralRule: "Adjectives don't change with number or gender — they stay the same",
+    pluralRule: "Both உரிச்சொல் (intensifiers) and பெயரடை (noun qualifiers) are invariable — they do not change with number or gender",
   },
   {
     name: "Adverb",

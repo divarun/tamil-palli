@@ -42,8 +42,9 @@ export const sandhiRules: SandhiRule[] = [
       "In many environments hard consonants do NOT double — for example after certain suffixes and words including verbal nouns, relationship words, and others. Knowing when NOT to double is as important as knowing when to double.",
     pattern: "Certain word + க/ச/ட/த/ப/ற → no doubling",
     examples: [
-      { before: "படிக்க + போகிறான்", after: "படிக்கப் போகிறான்", romanization: "padikka pogiraan", english: "going to study (ப doubles after infinitive)" },
-      { before: "வீட்டில் + கடை", after: "வீட்டில் கடை", romanization: "veettil kadai", english: "shop in the house (no doubling after -ல்)" },
+      { before: "வீட்டில் + கடை", after: "வீட்டில் கடை", romanization: "veettil kadai", english: "shop in the house (no doubling after locative -ல்)" },
+      { before: "அவன் + தங்கை", after: "அவன் தங்கை", romanization: "avan thangai", english: "his younger sister (no doubling after relationship pronoun)" },
+      { before: "படிக்கும் + போது", after: "படிக்கும் போது", romanization: "padikkum podhu", english: "while studying (no doubling after -ம் in time clauses)" },
     ],
   },
   {

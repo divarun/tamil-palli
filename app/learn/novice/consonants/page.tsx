@@ -74,6 +74,34 @@ export default function ConsonantsPage() {
         );
       })}
 
+      {/* Geminate consonants */}
+      <section className="mb-8">
+        <h2 className="text-lg font-semibold text-gray-800 mb-2">Doubled (Geminate) Consonants</h2>
+        <p className="text-sm text-gray-500 mb-4">Tamil doubles consonants to change meaning. A doubled consonant (shown with a pulli ் before the repeated letter) is held longer — and the difference is real. Missing a geminate changes the word.</p>
+        <div className="grid sm:grid-cols-2 gap-3 mb-3">
+          {[
+            { single: "பல", singleMeaning: "many", doubled: "பல்லு / பல்", doubledMeaning: "tooth (with full geminate in speech)" },
+            { single: "கல", singleMeaning: "(verb root: to learn)", doubled: "கல்லு / கல்", doubledMeaning: "stone" },
+            { single: "தட", singleMeaning: "to tap / hit", doubled: "தட்டு", doubledMeaning: "plate / tray" },
+            { single: "படி", singleMeaning: "to read / step", doubled: "பட்டி", doubledMeaning: "list / cattle pen" },
+          ].map((ex) => (
+            <div key={ex.single} className="bg-white border border-red-100 rounded-xl p-3">
+              <div className="flex gap-4 text-sm">
+                <div className="flex-1">
+                  <span className="tamil-text font-bold text-gray-700">{ex.single}</span>
+                  <span className="text-gray-400 ml-1 text-xs">— {ex.singleMeaning}</span>
+                </div>
+                <div className="flex-1">
+                  <span className="tamil-text font-bold text-red-700">{ex.doubled}</span>
+                  <span className="text-gray-400 ml-1 text-xs">— {ex.doubledMeaning}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs text-gray-500 bg-gray-50 rounded-lg p-3">In Tamil script, a doubled consonant is written as <span className="tamil-text">க்க, ட்ட, ப்ப, ல்ல</span> etc. — the pulli (்) on the first consonant shows it has no vowel of its own.</p>
+      </section>
+
       <div className="flex gap-3 mt-6">
         <Link href="/exercises/novice/letter-recognition" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Practice Exercises →

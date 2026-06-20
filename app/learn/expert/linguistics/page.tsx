@@ -22,7 +22,7 @@ const scriptEvolution = [
 const tolkappiyamFacts = [
   "Written by Tolkāppiyar, said to be a student of the legendary sage Agastya",
   "Divided into 3 books: Ezhuttutikāram (phonology), Collatikāram (morphology), Poruḷatikāram (poetics/semantics)",
-  "Describes all 247 Tamil letters and their phonological rules",
+  "Describes the Tamil phonological system — the 247-letter count (12 vowels + 18 consonants + 1 aytham + 216 combined) is a later pedagogical convention; Tolkāppiyam analyses sounds and their rules, not a fixed grid",
   "Codifies the tiṇai (landscape-emotion) system of Sangam poetry",
   "One of the oldest surviving grammatical texts in any language",
   "Tamil grammar tradition (இலக்கண மரபு) follows Tolkāppiyam as the foundational authority",
@@ -119,6 +119,11 @@ export default function LinguisticsPage() {
       >
         {done ? "✓ Completed" : "Mark as Complete"}
       </button>
+
+      <div className="flex gap-3 mt-6">
+        <Link href="/learn/expert/dialects" className="px-4 py-2 border border-rose-200 text-rose-700 rounded-xl text-sm font-medium hover:bg-rose-50 transition-colors">← Tamil Dialects</Link>
+        <Link href="/learn/expert/contemporary" className="px-4 py-2 bg-rose-600 text-white rounded-xl text-sm font-medium hover:bg-rose-700 transition-colors">Next: News & Media →</Link>
+      </div>
     </div>
   );
 }

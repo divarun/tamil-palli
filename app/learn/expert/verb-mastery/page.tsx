@@ -129,6 +129,10 @@ export default function VerbMasteryPage() {
       >
         {done ? "✓ Completed" : "Mark as Complete"}
       </button>
+
+      <div className="flex gap-3 mt-6">
+        <Link href="/learn/expert/silappatikaram" className="px-4 py-2 bg-rose-600 text-white rounded-xl text-sm font-medium hover:bg-rose-700 transition-colors">Next: Silappatikaram →</Link>
+      </div>
     </div>
   );
 }

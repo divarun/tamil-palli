@@ -42,7 +42,37 @@ export default function NumbersPage() {
         ))}
       </div>
 
-      <div className="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-5">
+      {/* Tamil numeral glyphs */}
+      <section className="mt-8 mb-6">
+        <h2 className="text-lg font-semibold text-gray-800 mb-2">Tamil Numeral Glyphs (தமிழ் இலக்கங்கள்)</h2>
+        <p className="text-sm text-gray-500 mb-4">Tamil has its own numeral characters, separate from Arabic numerals. You will encounter these on currency, in classical texts, government documents, and temple inscriptions.</p>
+        <div className="grid grid-cols-5 sm:grid-cols-10 gap-2 mb-4">
+          {[
+            { glyph: "௧", arabic: "1" }, { glyph: "௨", arabic: "2" }, { glyph: "௩", arabic: "3" },
+            { glyph: "௪", arabic: "4" }, { glyph: "௫", arabic: "5" }, { glyph: "௬", arabic: "6" },
+            { glyph: "௭", arabic: "7" }, { glyph: "௮", arabic: "8" }, { glyph: "௯", arabic: "9" },
+            { glyph: "௦", arabic: "0" },
+          ].map(({ glyph, arabic }) => (
+            <div key={arabic} className="bg-white border border-orange-100 rounded-xl p-2 text-center">
+              <div className="text-3xl tamil-text font-bold text-gray-800">{glyph}</div>
+              <div className="text-xs text-orange-600">{arabic}</div>
+            </div>
+          ))}
+        </div>
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
+          {[
+            { glyph: "௰", label: "10 (பத்து)" }, { glyph: "௱", label: "100 (நூறு)" },
+            { glyph: "௲", label: "1000 (ஆயிரம்)" },
+          ].map(({ glyph, label }) => (
+            <div key={glyph} className="bg-amber-50 border border-amber-100 rounded-xl p-3 text-center">
+              <div className="text-3xl tamil-text font-bold text-gray-800">{glyph}</div>
+              <div className="text-xs text-gray-600 mt-1">{label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-5">
         <h2 className="font-semibold text-amber-900 mb-3">Pattern Note</h2>
         <p className="text-sm text-amber-800">
           Tamil numbers follow a regular pattern for tens: இருபது (20), முப்பது (30), நாற்பது (40), ஐம்பது (50), அறுபது (60), எழுபது (70), எண்பது (80), தொண்ணூறு (90).

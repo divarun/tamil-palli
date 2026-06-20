@@ -80,6 +80,35 @@ export default function VowelsPage() {
         </div>
       </section>
 
+      {/* Minimal pairs */}
+      <section className="mb-8">
+        <h2 className="text-lg font-semibold text-gray-800 mb-2">Vowel Length Changes Meaning</h2>
+        <p className="text-sm text-gray-500 mb-4">Short and long vowels are different phonemes in Tamil — swapping them changes the word entirely. These <em>minimal pairs</em> show why vowel length matters.</p>
+        <div className="grid sm:grid-cols-2 gap-3">
+          {[
+            { short: "பல்", shortRom: "pal", shortMeaning: "tooth", long: "பால்", longRom: "paal", longMeaning: "milk" },
+            { short: "கல்", shortRom: "kal", shortMeaning: "stone", long: "கால்", longRom: "kaal", longMeaning: "leg / foot" },
+            { short: "மின்", shortRom: "min", shortMeaning: "electricity / lightning", long: "மீன்", longRom: "meen", longMeaning: "fish" },
+            { short: "புல்", shortRom: "pul", shortMeaning: "grass", long: "பூல்", longRom: "pool", longMeaning: "thread (dialectal) — avoid confusion" },
+            { short: "வெர்", shortRom: "ver", shortMeaning: "(dialectal form)", long: "வேர்", longRom: "veyr", longMeaning: "root (of a plant)" },
+            { short: "உரு", shortRom: "uru", shortMeaning: "shape / form", long: "ஊரு", longRom: "uuru", longMeaning: "thigh (colloquial); also ஊர் = village" },
+          ].map((pair) => (
+            <div key={pair.short} className="bg-white border border-orange-100 rounded-xl p-3 flex gap-4">
+              <div className="flex-1 text-center border-r border-gray-100 pr-3">
+                <div className="text-2xl tamil-text font-bold text-blue-700">{pair.short}</div>
+                <div className="text-xs text-blue-500">{pair.shortRom} (short)</div>
+                <div className="text-xs text-gray-600 mt-1">{pair.shortMeaning}</div>
+              </div>
+              <div className="flex-1 text-center pl-1">
+                <div className="text-2xl tamil-text font-bold text-amber-700">{pair.long}</div>
+                <div className="text-xs text-amber-500">{pair.longRom} (long)</div>
+                <div className="text-xs text-gray-600 mt-1">{pair.longMeaning}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Practice */}
       <section className="bg-orange-50 rounded-2xl p-5 mb-6">
         <h2 className="font-semibold text-gray-800 mb-3">Practice Tips</h2>

@@ -1008,6 +1008,36 @@ function WorksheetPrintContent({ ws }: { ws: Worksheet }) {
   );
 }
 
+// ── Print view (replaces full page so window.print() works on mobile) ─────────
+
+function PrintView({ ws, onClose }: { ws: Worksheet; onClose: () => void }) {
+  useEffect(() => {
+    const afterPrint = () => onClose();
+    window.addEventListener("afterprint", afterPrint);
+    return () => window.removeEventListener("afterprint", afterPrint);
+  }, [onClose]);
+
+  return (
+    <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="flex gap-3 mb-6 no-print">
+        <button
+          onClick={() => window.print()}
+          className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors"
+        >
+          🖨️ Print / Save as PDF
+        </button>
+        <button
+          onClick={onClose}
+          className="px-4 py-2 border border-gray-300 text-gray-600 rounded-xl text-sm font-medium hover:bg-gray-50 transition-colors"
+        >
+          ← Back to Worksheets
+        </button>
+      </div>
+      <WorksheetPrintContent ws={ws} />
+    </div>
+  );
+}
+
 // ── Page ─────────────────────────────────────────────────────────────────────
 
 function WorksheetsPage() {
@@ -1031,8 +1061,14 @@ function WorksheetsPage() {
 
   const handlePrint = (wsId: string) => {
     setPrinting(wsId);
-    setTimeout(() => { window.print(); setPrinting(null); }, 300);
   };
+
+  if (printing) {
+    const ws = worksheets.find((w) => w.id === printing);
+    return ws ? (
+      <PrintView ws={ws} onClose={() => setPrinting(null)} />
+    ) : null;
+  }
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -1041,12 +1077,12 @@ function WorksheetsPage() {
         <p className="text-gray-500 text-sm mt-1">Print directly from your browser — no PDF library needed</p>
       </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6 text-sm text-blue-800 no-print">
+      <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6 text-sm text-blue-800">
         <strong>How to print:</strong> Click "Print Worksheet" on any card. Your browser's print dialog will open — choose your printer or "Save as PDF". Use landscape mode for grids and tables.
       </div>
 
       {/* Filters */}
-      <div className="flex flex-wrap gap-3 mb-6 no-print">
+      <div className="flex flex-wrap gap-3 mb-6">
         <div className="flex flex-wrap gap-1">
           {(["all", "novice", "intermediate", "advanced", "expert"] as Level[]).map((l) => (
             <button key={l} onClick={() => setLevelFilter(l)} className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${levelFilter === l ? "bg-orange-500 text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-orange-300"}`}>
@@ -1063,17 +1099,8 @@ function WorksheetsPage() {
         </div>
       </div>
 
-      {/* Hidden print layer */}
-      {printing && (
-        <div className="hidden print:block">
-          {worksheets.filter((ws) => ws.id === printing).map((ws) => (
-            <WorksheetPrintContent key={ws.id} ws={ws} />
-          ))}
-        </div>
-      )}
-
       {/* Worksheet grid */}
-      <div className="grid gap-4 sm:grid-cols-2 no-print">
+      <div className="grid gap-4 sm:grid-cols-2">
         {filtered.map((ws) => {
           const lc = levelColors[ws.level] ?? "bg-gray-50 border-gray-200";
           const tc = layoutColors[ws.layout] ?? "bg-gray-100 text-gray-700";

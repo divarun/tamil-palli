@@ -47,7 +47,18 @@ export default function SangamPage() {
         ))}
       </div>
 
-      <h2 className="font-semibold text-gray-800 mb-3">A Verse to Know</h2>
+      <h2 className="font-semibold text-gray-800 mb-3">Akam (அகம்) — Love Poetry in Action</h2>
+      <div className="bg-rose-50 border border-rose-200 rounded-2xl p-6 mb-6">
+        <p className="text-xs text-gray-500 mb-1">From Kuṟuntokai — Poem 40 (Kurinji tiṇai — mountain / union in love)</p>
+        <p className="tamil-text text-gray-900 text-base leading-relaxed mb-2 whitespace-pre-line">{"யாயும் ஞாயும் யாரா கியரோ\nஏதிலர் என்னேம் அலரே\nதாமரைத் தண்தளிர் போல\nஒருங்கே வாழ்தும் என்றெம் நகரே"}</p>
+        <p className="text-xs text-orange-600 italic mb-2">{"Yaayum Nyaayum yaara kiyaro / Edilar ennem alare / Thamarai thaNthaLir poola / Orunge vaazhdum endrem nagare"}</p>
+        <p className="text-sm text-gray-700 mb-3"><strong>Meaning:</strong> "What kin were our mothers to each other? What kin were our fathers? Yet — like the cool petals of a lotus — we have come to live as one." (A woman speaks of how two strangers became inseparable, as if fated.)</p>
+        <div className="bg-white/70 rounded-lg p-3 text-xs text-gray-600">
+          <strong>Tiṇai note:</strong> The lotus (தாமரை) and mountain imagery place this in the Kuriñci (குறிஞ்சி) landscape — mountains, associated with <em>union</em> in love. The poem never mentions love directly; the landscape does the work. This is the core principle of Akam poetry.
+        </div>
+      </div>
+
+      <h2 className="font-semibold text-gray-800 mb-3">Puram (புறம்) — A Verse to Know</h2>
       <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 mb-8">
         <p className="text-xs text-gray-500 mb-1">{sampleVerse.title} — {sampleVerse.author}</p>
         <p className="tamil-text text-2xl font-bold text-gray-900 leading-relaxed mb-3 whitespace-pre-line">{sampleVerse.tamil}</p>

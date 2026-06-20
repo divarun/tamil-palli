@@ -66,6 +66,40 @@ export default function TensesPage() {
         })}
       </div>
 
+      {/* Negation */}
+      <section className="mb-10">
+        <h2 className="text-lg font-semibold text-gray-800 mb-2">Negation (எதிர்மறை)</h2>
+        <p className="text-sm text-gray-500 mb-4">Negative forms differ by tense. Past and present use <span className="tamil-text font-medium">-வில்லை</span>; future uses <span className="tamil-text font-medium">-மாட்டேன் / -மாட்டான் / -மாட்டாள்</span>.</p>
+        <div className="overflow-x-auto rounded-xl border border-gray-200 mb-4">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-gray-50">
+                <th className="text-left p-3 font-medium text-gray-600">Positive</th>
+                <th className="text-left p-3 font-medium text-red-600">Negative</th>
+                <th className="text-left p-3 font-medium text-gray-500">English</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { pos: "நான் வந்தேன்", neg: "நான் வரவில்லை", eng: "I came / I did not come" },
+                { pos: "அவன் படிக்கிறான்", neg: "அவன் படிக்கவில்லை", eng: "He studies / He does not study" },
+                { pos: "நான் வருவேன்", neg: "நான் வரமாட்டேன்", eng: "I will come / I will not come" },
+                { pos: "அவள் சாப்பிடுவாள்", neg: "அவள் சாப்பிடமாட்டாள்", eng: "She will eat / She will not eat" },
+              ].map((row, i) => (
+                <tr key={row.pos} className={i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}>
+                  <td className="p-3 tamil-text text-emerald-700">{row.pos}</td>
+                  <td className="p-3 tamil-text text-red-700">{row.neg}</td>
+                  <td className="p-3 text-gray-500 text-xs">{row.eng}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="bg-blue-50 border border-blue-100 rounded-xl p-3 text-sm text-blue-800">
+          <strong>Key phrases to know now:</strong> நான் தெரியவில்லை (I don't know) · புரியவில்லை (I don't understand) · இல்லை (No / it is not) · வேண்டாம் (I don't want it)
+        </div>
+      </section>
+
       {/* Pronoun reference table */}
       <h2 className="text-lg font-semibold text-gray-800 mb-3">Verb Endings by Pronoun</h2>
       <div className="overflow-x-auto rounded-xl border border-gray-200 mb-8">

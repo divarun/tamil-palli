@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const overview = {
   author: "இளங்கோ அடிகள் (Iḷaṅkō Aṭikaḷ)",
-  period: "c. 2nd–5th century CE",
+  period: "c. 2nd–9th century CE (debated)",
   language: "Classical Tamil (செந்தமிழ்)",
   genre: "Epic poem (காப்பியம்)",
   title: "சிலப்பதிகாரம் (Cilappatikāram)",
@@ -143,6 +143,11 @@ export default function SilappatikaaramPage() {
       >
         {done ? "✓ Completed" : "Mark as Complete"}
       </button>
+
+      <div className="flex gap-3 mt-6">
+        <Link href="/learn/expert/verb-mastery" className="px-4 py-2 border border-rose-200 text-rose-700 rounded-xl text-sm font-medium hover:bg-rose-50 transition-colors">← Verb Conjugation</Link>
+        <Link href="/learn/expert/prosody" className="px-4 py-2 bg-rose-600 text-white rounded-xl text-sm font-medium hover:bg-rose-700 transition-colors">Next: Poetry & Metres →</Link>
+      </div>
     </div>
   );
 }

@@ -26,15 +26,15 @@ export const consonants: Consonant[] = [
   // Mellinam (Soft/Nasal) — ங ஞ ண ந ம ன
   { tamil: "ங", romanization: "nga", group: "mellinam", example: "மங்கை", exampleMeaning: "young woman", tip: "Nasal 'ng' as in 'sing'" },
   { tamil: "ஞ", romanization: "nya", group: "mellinam", example: "ஞானம்", exampleMeaning: "wisdom", tip: "Nasal 'ny' as in 'canyon'" },
-  { tamil: "ண", romanization: "na", group: "mellinam", example: "பண்", exampleMeaning: "tune", tip: "Retroflex nasal 'n'" },
-  { tamil: "ந", romanization: "na", group: "mellinam", example: "நல்லது", exampleMeaning: "good", tip: "Dental nasal 'n'" },
+  { tamil: "ண", romanization: "Na", group: "mellinam", example: "பண்", exampleMeaning: "tune", tip: "Retroflex nasal — tongue tip curled back (distinct from ந and ன)" },
+  { tamil: "ந", romanization: "na", group: "mellinam", example: "நல்லது", exampleMeaning: "good", tip: "Dental nasal — tongue against upper teeth" },
   { tamil: "ம", romanization: "ma", group: "mellinam", example: "மரம்", exampleMeaning: "tree", tip: "Like 'm' in 'mother'" },
-  { tamil: "ன", romanization: "na", group: "mellinam", example: "மனம்", exampleMeaning: "mind", tip: "Alveolar 'n' — like 'n' in 'no'" },
+  { tamil: "ன", romanization: "na", group: "mellinam", example: "மனம்", exampleMeaning: "mind", tip: "Alveolar nasal — like 'n' in 'no' (word-final and word-medial; not word-initial)" },
   // Idaiyinam (Medium) — ய ர ல வ ழ ள
   { tamil: "ய", romanization: "ya", group: "idaiyinam", example: "யானை", exampleMeaning: "elephant", tip: "Like 'y' in 'yes'" },
   { tamil: "ர", romanization: "ra", group: "idaiyinam", example: "ரயில்", exampleMeaning: "train", tip: "Trilled 'r'" },
-  { tamil: "ல", romanization: "la", group: "idaiyinam", example: "லட்டு", exampleMeaning: "sweet ball", tip: "Dental 'l'" },
+  { tamil: "ல", romanization: "la", group: "idaiyinam", example: "லட்டு", exampleMeaning: "sweet ball", tip: "Dental 'l' — tongue tip against upper teeth" },
   { tamil: "வ", romanization: "va", group: "idaiyinam", example: "வீடு", exampleMeaning: "house", tip: "Like 'v' in 'vine'" },
-  { tamil: "ழ", romanization: "zha", group: "idaiyinam", example: "தமிழ்", exampleMeaning: "Tamil", tip: "Unique Tamil sound — retroflex approximant, no English equivalent" },
-  { tamil: "ள", romanization: "la", group: "idaiyinam", example: "வளர்", exampleMeaning: "grow", tip: "Retroflex 'l' — tongue curled back" },
+  { tamil: "ழ", romanization: "zha", group: "idaiyinam", example: "தமிழ்", exampleMeaning: "Tamil", tip: "The most distinctive Tamil sound — retroflex approximant, no English equivalent. Never drop or substitute this!" },
+  { tamil: "ள", romanization: "La", group: "idaiyinam", example: "வளர்", exampleMeaning: "grow", tip: "Retroflex 'l' — tongue curled back (distinct from ல)" },
 ];

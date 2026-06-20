@@ -15,12 +15,12 @@ export type TenseRule = {
 export const tenses: TenseRule[] = [
   {
     tense: "past",
-    tamilName: "இறந்த காலம் (Idhandha Kaalam)",
+    tamilName: "இறந்த காலம் (Iranta Kaalam)",
     suffix: "-ந்தேன் / -டேன் / -த்தேன்",
     description:
       "Past tense in Tamil uses different suffixes depending on the verb class. The most common is -ந்தேன் (I did) for the first person singular. The suffix changes with person and number.",
     examples: [
-      { tamil: "நான் சாப்பிட்டேன்", romanization: "naan saappittteen", english: "I ate" },
+      { tamil: "நான் சாப்பிட்டேன்", romanization: "naan saappitten", english: "I ate" },
       { tamil: "அவன் வந்தான்", romanization: "avan vandhaan", english: "He came" },
       { tamil: "நாங்கள் பார்த்தோம்", romanization: "naangal paarththoom", english: "We saw" },
       { tamil: "அவள் பாடினாள்", romanization: "aval paadinaal", english: "She sang" },
@@ -38,7 +38,7 @@ export const tenses: TenseRule[] = [
       { tamil: "அவன் விளையாடுகிறான்", romanization: "avan vilaiyaadukiraan", english: "He is playing" },
       { tamil: "நாங்கள் பேசுகிறோம்", romanization: "naangal peesukiroom", english: "We are talking" },
       { tamil: "அவள் சமைக்கிறாள்", romanization: "aval samaikkiraaal", english: "She is cooking" },
-      { tamil: "மழை பெய்கிறது", romanization: "malai peigirathu", english: "It is raining" },
+      { tamil: "மழை பெய்கிறது", romanization: "mazhai peygirathu", english: "It is raining" },
     ],
   },
   {
@@ -52,7 +52,7 @@ export const tenses: TenseRule[] = [
       { tamil: "அவன் சாப்பிடுவான்", romanization: "avan saappiduvaan", english: "He will eat" },
       { tamil: "நாங்கள் பார்ப்போம்", romanization: "naangal paarppoom", english: "We will see" },
       { tamil: "அவள் படிப்பாள்", romanization: "aval padippaal", english: "She will study" },
-      { tamil: "மழை பெய்யும்", romanization: "malai peiyum", english: "It will rain" },
+      { tamil: "மழை பெய்யும்", romanization: "mazhai peyyum", english: "It will rain" },
     ],
   },
 ];

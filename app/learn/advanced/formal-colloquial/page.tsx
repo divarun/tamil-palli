@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const comparisons = [
   { context: "Greeting", formal: "வணக்கம்", colloquial: "ஏய் / என்னாச்சு?", fRoman: "vanakkam", cRoman: "ey / ennaachu?", note: "Formal is always safe; colloquial is used between friends" },
-  { context: "I ate", formal: "நான் சாப்பிட்டேன்", colloquial: "சாப்பிட்டேன்", fRoman: "naan saappittteen", cRoman: "saappittteen", note: "Spoken Tamil often drops the subject pronoun" },
+  { context: "I ate", formal: "நான் சாப்பிட்டேன்", colloquial: "சாப்பிட்டேன்", fRoman: "naan saappitten", cRoman: "saappitten", note: "Spoken Tamil often drops the subject pronoun" },
   { context: "What are you doing?", formal: "நீங்கள் என்ன செய்கிறீர்கள்?", colloquial: "என்ன பண்றே?", fRoman: "neengal enna seikireeragal?", cRoman: "enna panre?", note: "Colloquial uses completely different verb forms" },
   { context: "He is not coming", formal: "அவர் வருவதில்லை", colloquial: "அவன் வரல", fRoman: "avar varuvadhillai", cRoman: "avan varal", note: "Colloquial negative is formed differently (வரல instead of வருவதில்லை)" },
 ];
@@ -21,7 +21,7 @@ export default function FormalColloquialPage() {
       <div className="flex items-start justify-between gap-4 mb-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Formal vs Colloquial Tamil</h1>
-          <p className="tamil-text text-orange-600 text-lg">செந்தமிழ் vs கொடுந்தமிழ்</p>
+          <p className="tamil-text text-orange-600 text-lg">செந்தமிழ் vs பேச்சுத் தமிழ்</p>
         </div>
         <button onClick={() => markTopicComplete("adv-formal-vs-colloquial")} className={`shrink-0 px-4 py-2 rounded-xl text-sm font-medium transition-colors ${done ? "bg-green-100 text-green-700" : "bg-orange-100 text-orange-700 hover:bg-orange-200"}`}>
           {done ? "✓ Completed" : "Mark Complete"}
@@ -29,7 +29,7 @@ export default function FormalColloquialPage() {
       </div>
 
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-6 text-sm text-amber-800">
-        Tamil has a significant <strong>diglossia</strong> — the formal written language (செந்தமிழ்) and the spoken colloquial language (கொடுந்தமிழ்) are quite different. Both are important: formal Tamil is used in writing, education, news, and official settings; colloquial is used in conversation.
+        Tamil has a significant <strong>diglossia</strong> — the formal written language (செந்தமிழ்) and the spoken colloquial language (பேச்சுத் தமிழ்) are quite different. Both are important: formal Tamil is used in writing, education, news, and official settings; colloquial is used in conversation.
       </div>
 
       <div className="overflow-x-auto rounded-xl border border-gray-200 mb-8">

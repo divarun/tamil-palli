@@ -38,11 +38,11 @@ export const directions: VocabItem[] = [
 ];
 
 export const days: VocabItem[] = [
-  { tamil: "ஞாயிறு", romanization: "njaayiru", english: "Sunday", category: "days" },
+  { tamil: "ஞாயிறு", romanization: "nyaayiru", english: "Sunday", category: "days" },
   { tamil: "திங்கள்", romanization: "thingal", english: "Monday", category: "days" },
   { tamil: "செவ்வாய்", romanization: "sevvaai", english: "Tuesday", category: "days" },
   { tamil: "புதன்", romanization: "pudhan", english: "Wednesday", category: "days" },
-  { tamil: "வியாழன்", romanization: "viyaazan", english: "Thursday", category: "days" },
+  { tamil: "வியாழன்", romanization: "viyaazhan", english: "Thursday", category: "days" },
   { tamil: "வெள்ளி", romanization: "velli", english: "Friday", category: "days" },
   { tamil: "சனி", romanization: "sani", english: "Saturday", category: "days" },
 ];
@@ -56,7 +56,7 @@ export const tamilMonths: VocabItem[] = [
   { tamil: "புரட்டாசி", romanization: "purattaasi", english: "Purattasi (Sep–Oct)", category: "tamil-months" },
   { tamil: "ஐப்பசி", romanization: "aippasi", english: "Aippasi (Oct–Nov)", category: "tamil-months" },
   { tamil: "கார்த்திகை", romanization: "kaarththigai", english: "Karthigai (Nov–Dec)", category: "tamil-months" },
-  { tamil: "மார்கழி", romanization: "maargali", english: "Margazhi (Dec–Jan)", category: "tamil-months" },
+  { tamil: "மார்கழி", romanization: "maargazhi", english: "Margazhi (Dec–Jan)", category: "tamil-months" },
   { tamil: "தை", romanization: "thai", english: "Thai (Jan–Feb)", category: "tamil-months" },
   { tamil: "மாசி", romanization: "maasi", english: "Maasi (Feb–Mar)", category: "tamil-months" },
   { tamil: "பங்குனி", romanization: "panguni", english: "Panguni (Mar–Apr)", category: "tamil-months" },
@@ -79,7 +79,7 @@ export const englishMonthsInTamil: VocabItem[] = [
 
 export const seasons: VocabItem[] = [
   { tamil: "கோடை", romanization: "kodai", english: "Summer", category: "seasons" },
-  { tamil: "மழைக்காலம்", romanization: "malaikkaalam", english: "Rainy season", category: "seasons" },
+  { tamil: "மழைக்காலம்", romanization: "mazhaikkaalum", english: "Rainy season", category: "seasons" },
   { tamil: "குளிர்காலம்", romanization: "kulirkkaalam", english: "Winter / Cold season", category: "seasons" },
   { tamil: "இலையுதிர்காலம்", romanization: "ilaiyudhirkkaalam", english: "Autumn", category: "seasons" },
   { tamil: "வசந்தம்", romanization: "vasantham", english: "Spring", category: "seasons" },

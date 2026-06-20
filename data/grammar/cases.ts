@@ -27,7 +27,7 @@ export const cases: GrammarCase[] = [
     tamilName: "செயப்படுபொருள் வேற்றுமை (Seiyappadupordul Veetrumai)",
     suffix: "-ஐ (-ai)",
     role: "Direct object — what the action is done to",
-    question: "யாரை? (whom?) / என்னை? (what, as object?)",
+    question: "யாரை? (whom?) / எதை? (what, as object?)",
     examples: [
       { tamil: "நான் புத்தகத்தை படிக்கிறேன்", romanization: "naan puththakaththai padikkireen", english: "I read the book (book = object)" },
       { tamil: "அவன் பந்தை உதைத்தான்", romanization: "avan pandhai udhaittaan", english: "He kicked the ball (ball = object)" },

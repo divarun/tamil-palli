@@ -66,6 +66,55 @@ export default function SentencesPage() {
         ))}
       </div>
 
+      {/* Postpositions */}
+      <section className="mb-8">
+        <h2 className="font-semibold text-gray-800 mb-2">Postpositions (இடைச்சொல்)</h2>
+        <p className="text-sm text-gray-500 mb-4">Tamil uses postpositions — they come <em>after</em> the noun (opposite of English prepositions). They often combine with case suffixes.</p>
+        <div className="grid sm:grid-cols-2 gap-2">
+          {[
+            { tamil: "மேலே", rom: "meyle", meaning: "on top of / above", example: "மேசையின் மேலே — on top of the table" },
+            { tamil: "கீழே", rom: "keezhe", meaning: "below / under", example: "நாற்காலியின் கீழே — under the chair" },
+            { tamil: "முன்னால்", rom: "munnaal", meaning: "in front of", example: "வீட்டின் முன்னால் — in front of the house" },
+            { tamil: "பின்னால்", rom: "pinnaal", meaning: "behind", example: "கடையின் பின்னால் — behind the shop" },
+            { tamil: "அருகே", rom: "aruge", meaning: "near / beside", example: "பள்ளி அருகே — near the school" },
+            { tamil: "உள்ளே", rom: "uLLe", meaning: "inside", example: "வீட்டிற்கு உள்ளே — inside the house" },
+            { tamil: "வெளியே", rom: "veliye", meaning: "outside", example: "வெளியே போ — go outside" },
+            { tamil: "நடுவே", rom: "naduve", meaning: "in the middle of", example: "சாலையின் நடுவே — in the middle of the road" },
+          ].map((pp) => (
+            <div key={pp.tamil} className="bg-white border border-orange-100 rounded-xl p-3">
+              <div className="flex items-baseline gap-2 mb-1">
+                <span className="tamil-text font-bold text-gray-900">{pp.tamil}</span>
+                <span className="text-xs text-orange-500">{pp.rom}</span>
+                <span className="text-xs text-gray-500">— {pp.meaning}</span>
+              </div>
+              <p className="text-xs text-gray-400 tamil-text">{pp.example}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* The -உம் suffix */}
+      <section className="mb-8">
+        <h2 className="font-semibold text-gray-800 mb-2">The -உம் Suffix (also / too)</h2>
+        <p className="text-sm text-gray-500 mb-4"><span className="tamil-text font-medium">-உம்</span> attaches to nouns, pronouns, and verbs. On nouns/pronouns it means "also / too"; it is one of the most common particles in Tamil.</p>
+        <div className="space-y-2">
+          {[
+            { base: "நான்", withum: "நானும்", rom: "naanum", meaning: "I also / me too" },
+            { base: "அவன்", withum: "அவனும்", rom: "avanUM", meaning: "he also / him too" },
+            { base: "தமிழ்", withum: "தமிழும்", rom: "tamilum", meaning: "Tamil also / and Tamil" },
+            { base: "வந்தான்", withum: "வந்தானும்", rom: "vandhaanum", meaning: "he came too" },
+          ].map((ex) => (
+            <div key={ex.base} className="flex items-center gap-4 bg-orange-50 rounded-xl px-4 py-2.5">
+              <span className="tamil-text text-gray-500 w-24">{ex.base} + உம்</span>
+              <span className="text-gray-400">→</span>
+              <span className="tamil-text font-bold text-gray-900">{ex.withum}</span>
+              <span className="text-xs text-orange-600">{ex.rom}</span>
+              <span className="text-xs text-gray-500 ml-auto">{ex.meaning}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <div className="flex gap-3">
         <Link href="/tests/intermediate" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">Take Intermediate Test →</Link>
         <Link href="/learn/advanced/cases-all" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">Start Advanced →</Link>
