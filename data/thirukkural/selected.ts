@@ -91,7 +91,7 @@ export const selectedKurals: Kural[] = [
   {
     id: 215,
     chapter: 22,
-    chapterName: "Ingratitude (நன்றியில் செல்வம்)",
+    chapterName: "Gratitude (ஒப்புரவறிதல்)",
     line1: "தினைத்துணை நன்றி செய்தார்க்கும் உதவி",
     line2: "கனைத்துணையாக் கொள்வர் சான்றோர்",
     transliteration1: "thinaittunai nandri seidhaarkkum udhavi",

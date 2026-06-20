@@ -39,6 +39,9 @@ export default function ConsonantsPage() {
           {done ? "✓ Completed" : "Mark Complete"}
         </button>
       </div>
+      <p className="text-xs text-gray-500 mb-6">
+        Romanization uses capital letters for retroflex sounds: <span className="font-mono">N</span> = ண, <span className="font-mono">L</span> = ள, <span className="font-mono">ṉ</span> = ன, <span className="font-mono">zh</span> = ழ. See the full{" "}
+        <Link href="/learn/novice/vowels" className="text-orange-600 underline">Romanization Key</Link> on the Vowels page.</p>
 
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 text-sm text-amber-800">
         <strong>Note:</strong> Each consonant is shown in its full form (with inherent vowel "a"). In words, they combine with vowels using diacritics — you'll learn that in the Combined Letters lesson.
