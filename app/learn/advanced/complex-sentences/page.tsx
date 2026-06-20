@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const complexExamples = [
   { type: "Relative Clause", tamil: "நான் பார்த்த திரைப்படம் நல்லதாக இருந்தது", romanization: "Naan paartha thilaippadam nallathaga irundhadhu", english: "The film that I watched was good" },
-  { type: "Conditional Sentence", tamil: "மழை பெய்தால் நான் வீட்டில் இருப்பேன்", romanization: "Malai peithal naan veettil iruppeen", english: "If it rains, I will stay at home" },
+  { type: "Conditional Sentence", tamil: "மழை பெய்தால் நான் வீட்டில் இருப்பேன்", romanization: "Mazhai peithal naan veettil iruppeen", english: "If it rains, I will stay at home" },
   { type: "Compound Sentence", tamil: "அவன் சாப்பிட்டான், ஆனால் அவள் சாப்பிடவில்லை", romanization: "Avan saappittaan, aanaal aval saappidavillai", english: "He ate, but she did not eat" },
   { type: "Purpose Clause", tamil: "படிக்க பள்ளிக்கு போகிறேன்", romanization: "Padikka pallikku pogirreen", english: "I am going to school to study" },
   { type: "Participial Phrase", tamil: "ஓடி வந்த குழந்தை தூங்கியது", romanization: "Oodi vanda kulanthai thoongiyathu", english: "The child who came running slept" },

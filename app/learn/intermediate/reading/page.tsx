@@ -8,14 +8,14 @@ const readingExamples = [
   { word: "கல்", romanization: "kal", meaning: "stone", level: "2 letters" },
   { word: "மரம்", romanization: "maram", meaning: "tree", level: "4 letters" },
   { word: "வீடு", romanization: "veedu", meaning: "house", level: "4 letters" },
-  { word: "மழை", romanization: "malai", meaning: "rain", level: "4 letters" },
+  { word: "மழை", romanization: "mazhai", meaning: "rain", level: "4 letters" },
   { word: "பள்ளி", romanization: "palli", meaning: "school", level: "5 letters" },
   { word: "குழந்தை", romanization: "kulanthai", meaning: "child", level: "7 letters" },
 ];
 
 const sentences = [
   { tamil: "அம்மா வந்தாள்.", romanization: "Amma vandhaal.", english: "Mother came." },
-  { tamil: "நான் சாப்பிட்டேன்.", romanization: "Naan saappittteen.", english: "I ate." },
+  { tamil: "நான் சாப்பிட்டேன்.", romanization: "Naan saappitten.", english: "I ate." },
   { tamil: "குழந்தை விளையாடுகிறது.", romanization: "Kulanthai vilaiyaadugiradhu.", english: "The child is playing." },
   { tamil: "வீட்டில் நாய் இருக்கிறது.", romanization: "Veettil naai irukkiRadhu.", english: "There is a dog at home." },
 ];

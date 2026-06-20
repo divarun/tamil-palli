@@ -81,7 +81,7 @@ export default function WordFormationPage() {
               return (
                 <tr key={c}>
                   <td className="p-2 border border-gray-200 bg-blue-50">
-                    <div className="text-xl tamil-text font-bold text-blue-800">{c}</div>
+                    <div className="text-xl tamil-text font-bold text-blue-800">{c}்</div>
                     <div className="text-xs text-blue-600">{con?.romanization}</div>
                   </td>
                   {previewVowels.map((v) => {

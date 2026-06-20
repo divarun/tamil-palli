@@ -38,7 +38,7 @@ export const dialogues: Dialogue[] = [
       { speaker: "A", tamil: "வணக்கம், பஸ் ஸ்டாண்ட் எங்கே இருக்கு?", romanization: "vanakkam, bas stand enge irukku?", english: "Hello, where is the bus stand?" },
       { speaker: "B", tamil: "நேரே போங்க, இரண்டு தெரு கழிச்சு வலது பக்கம் திரும்புங்க", romanization: "neere ponga, irandu theru kalicchu valadu pakkam thirumbuga", english: "Go straight, turn right after two streets" },
       { speaker: "A", tamil: "நடந்து போகலாமா?", romanization: "nadandhu pogalaama?", english: "Can I walk there?" },
-      { speaker: "B", tamil: "ஆமாம், ஐந்து நிமிஷம் தான்", romanization: "aamaam, ainthu nimidam dhaan", english: "Yes, it's only five minutes" },
+      { speaker: "B", tamil: "ஆமாம், ஐந்து நிமிடம் தான்", romanization: "aamaam, ainthu nimidam dhaan", english: "Yes, it's only five minutes" },
       { speaker: "A", tamil: "மிக்க நன்றி", romanization: "mikka nandri", english: "Thank you very much" },
     ],
   },

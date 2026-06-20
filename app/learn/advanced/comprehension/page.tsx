@@ -10,7 +10,7 @@ const passages = [
     id: "p1",
     title: "The Mango Tree",
     tamil: "எங்கள் வீட்டில் ஒரு மாமரம் இருக்கிறது. அந்த மரம் மிகவும் பெரியது. கோடை காலத்தில் அந்த மரத்தில் நிறைய மாம்பழங்கள் காய்க்கும். குழந்தைகள் அந்த பழங்களை சாப்பிடுவார்கள். மாமரம் எல்லோருக்கும் நிழல் கொடுக்கும்.",
-    romanization: "Engal veettil oru maamaram irukkiRadhu. Andha maram mikavum periyathu. Kodai kaalatthil andha marathil niraya maambagangal kaaykkum. Kulanthaigal andha pagangalai saappiduvaarkal. Maamaram ellorukum nilal kodukkum.",
+    romanization: "Engal veettil oru maamaram irukkiRadhu. Andha maram mikavum periyathu. Kodai kaalatthil andha marathil niraya maampazh angal kaaykkum. Kulanthaigal andha pazh angalai saappiduvaarkal. Maamaram ellorukum nilal kodukkum.",
     translation: "In our house there is a mango tree. That tree is very big. In summer many mangoes will grow on that tree. Children will eat those fruits. The mango tree gives shade to everyone.",
     questions: [
       { q: "மரம் எங்கே இருக்கிறது?", options: ["பள்ளியில்", "வீட்டில்", "கடலில்", "மலையில்"], answer: "வீட்டில்", english: "Where is the tree?" },

@@ -79,7 +79,7 @@ export const englishMonthsInTamil: VocabItem[] = [
 
 export const seasons: VocabItem[] = [
   { tamil: "கோடை", romanization: "kodai", english: "Summer", category: "seasons" },
-  { tamil: "மழைக்காலம்", romanization: "mazhaikkaalum", english: "Rainy season", category: "seasons" },
+  { tamil: "மழைக்காலம்", romanization: "mazhaikkaalaam", english: "Rainy season", category: "seasons" },
   { tamil: "குளிர்காலம்", romanization: "kulirkkaalam", english: "Winter / Cold season", category: "seasons" },
   { tamil: "இலையுதிர்காலம்", romanization: "ilaiyudhirkkaalam", english: "Autumn", category: "seasons" },
   { tamil: "வசந்தம்", romanization: "vasantham", english: "Spring", category: "seasons" },

@@ -102,8 +102,8 @@ export default function VowelsPage() {
             { short: "கல்", shortRom: "kal", shortMeaning: "stone", long: "கால்", longRom: "kaal", longMeaning: "leg / foot" },
             { short: "மின்", shortRom: "min", shortMeaning: "electricity / lightning", long: "மீன்", longRom: "meen", longMeaning: "fish" },
             { short: "குடம்", shortRom: "kudam", shortMeaning: "pot / vessel", long: "கூடம்", longRom: "koodam", longMeaning: "hall / gathering place" },
-            { short: "வெர்", shortRom: "ver", shortMeaning: "(dialectal form)", long: "வேர்", longRom: "veyr", longMeaning: "root (of a plant)" },
-            { short: "உரு", shortRom: "uru", shortMeaning: "shape / form", long: "ஊரு", longRom: "uuru", longMeaning: "thigh (colloquial); also ஊர் = village" },
+            { short: "வெல்", shortRom: "vel", shortMeaning: "to win / conquer", long: "வேல்", longRom: "veel", longMeaning: "spear (Lord Murugan's weapon)" },
+            { short: "கொல்", shortRom: "kol", shortMeaning: "to kill", long: "கோல்", longRom: "kool", longMeaning: "stick / rod / scepter" },
           ].map((pair) => (
             <div key={pair.short} className="bg-white border border-orange-100 rounded-xl p-3 flex gap-4">
               <div className="flex-1 text-center border-r border-gray-100 pr-3">

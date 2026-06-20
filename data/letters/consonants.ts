@@ -16,25 +16,25 @@ export const groupLabels: Record<ConsonantGroup, { english: string; tamil: strin
 };
 
 export const consonants: Consonant[] = [
-  // Vallinam (Hard) — க ச ட த ப ற
-  { tamil: "க", romanization: "ka", group: "vallinam", example: "கல்", exampleMeaning: "stone", tip: "Like 'k' in 'kite'" },
-  { tamil: "ச", romanization: "ca", group: "vallinam", example: "சந்தை", exampleMeaning: "market", tip: "Position-dependent: sounds like 'ch' at the start of a word, like 's' or 'ss' between vowels. Romanized 'ca' (ISO standard)" },
-  { tamil: "ட", romanization: "ta", group: "vallinam", example: "டாக்டர்", exampleMeaning: "doctor", tip: "Retroflex 't' — tongue curled back" },
-  { tamil: "த", romanization: "tha", group: "vallinam", example: "தாய்", exampleMeaning: "mother", tip: "Dental 't' — like 'th' in 'the'" },
-  { tamil: "ப", romanization: "pa", group: "vallinam", example: "பால்", exampleMeaning: "milk", tip: "Like 'p' in 'pot'" },
-  { tamil: "ற", romanization: "rra", group: "vallinam", example: "இறால்", exampleMeaning: "prawn", tip: "Strong 'r' unique to Tamil" },
-  // Mellinam (Soft/Nasal) — ங ஞ ண ந ம ன
-  { tamil: "ங", romanization: "nga", group: "mellinam", example: "மங்கை", exampleMeaning: "young woman", tip: "Nasal 'ng' as in 'sing'" },
-  { tamil: "ஞ", romanization: "nya", group: "mellinam", example: "ஞானம்", exampleMeaning: "wisdom", tip: "Nasal 'ny' as in 'canyon'" },
-  { tamil: "ண", romanization: "Na", group: "mellinam", example: "பண்", exampleMeaning: "tune", tip: "Retroflex nasal — tongue tip curled back (distinct from ந and ன)" },
-  { tamil: "ந", romanization: "na", group: "mellinam", example: "நல்லது", exampleMeaning: "good", tip: "Dental nasal — tongue against upper teeth" },
-  { tamil: "ம", romanization: "ma", group: "mellinam", example: "மரம்", exampleMeaning: "tree", tip: "Like 'm' in 'mother'" },
-  { tamil: "ன", romanization: "ṉa", group: "mellinam", example: "மனம்", exampleMeaning: "mind", tip: "Alveolar nasal (ṉ) — like 'n' in 'no'. Appears word-finally and word-medially, never word-initially. Distinct from dental ந (na)" },
-  // Idaiyinam (Medium) — ய ர ல வ ழ ள
-  { tamil: "ய", romanization: "ya", group: "idaiyinam", example: "யானை", exampleMeaning: "elephant", tip: "Like 'y' in 'yes'" },
-  { tamil: "ர", romanization: "ra", group: "idaiyinam", example: "ரயில்", exampleMeaning: "train", tip: "Trilled 'r'" },
-  { tamil: "ல", romanization: "la", group: "idaiyinam", example: "லட்டு", exampleMeaning: "sweet ball", tip: "Dental 'l' — tongue tip against upper teeth" },
-  { tamil: "வ", romanization: "va", group: "idaiyinam", example: "வீடு", exampleMeaning: "house", tip: "Like 'v' in 'vine'" },
-  { tamil: "ழ", romanization: "zha", group: "idaiyinam", example: "தமிழ்", exampleMeaning: "Tamil", tip: "The most distinctive Tamil sound — retroflex approximant, no English equivalent. Never drop or substitute this!" },
-  { tamil: "ள", romanization: "La", group: "idaiyinam", example: "வளர்", exampleMeaning: "grow", tip: "Retroflex 'l' — tongue curled back (distinct from ல)" },
+  // Vallinam (Hard) — க் ச் ட் த் ப் ற்
+  { tamil: "க", romanization: "k", group: "vallinam", example: "கல்", exampleMeaning: "stone", tip: "Like 'k' in 'kite'" },
+  { tamil: "ச", romanization: "c", group: "vallinam", example: "சந்தை", exampleMeaning: "market", tip: "Position-dependent: sounds like 'ch' at the start of a word, like 's' or 'ss' between vowels. Romanized 'c' (ISO standard)" },
+  { tamil: "ட", romanization: "t", group: "vallinam", example: "டாக்டர்", exampleMeaning: "doctor", tip: "Retroflex 't' — tongue curled back" },
+  { tamil: "த", romanization: "th", group: "vallinam", example: "தாய்", exampleMeaning: "mother", tip: "Dental 't' — like 'th' in 'the'" },
+  { tamil: "ப", romanization: "p", group: "vallinam", example: "பால்", exampleMeaning: "milk", tip: "Like 'p' in 'pot'" },
+  { tamil: "ற", romanization: "rr", group: "vallinam", example: "இறால்", exampleMeaning: "prawn", tip: "Strong 'r' unique to Tamil" },
+  // Mellinam (Soft/Nasal) — ங் ஞ் ண் ந் ம் ன்
+  { tamil: "ங", romanization: "ng", group: "mellinam", example: "மங்கை", exampleMeaning: "young woman", tip: "Nasal 'ng' as in 'sing'" },
+  { tamil: "ஞ", romanization: "ny", group: "mellinam", example: "ஞானம்", exampleMeaning: "wisdom", tip: "Nasal 'ny' as in 'canyon'" },
+  { tamil: "ண", romanization: "N", group: "mellinam", example: "பண்", exampleMeaning: "tune", tip: "Retroflex nasal — tongue tip curled back (distinct from ந and ன)" },
+  { tamil: "ந", romanization: "n", group: "mellinam", example: "நல்லது", exampleMeaning: "good", tip: "Dental nasal — tongue against upper teeth" },
+  { tamil: "ம", romanization: "m", group: "mellinam", example: "மரம்", exampleMeaning: "tree", tip: "Like 'm' in 'mother'" },
+  { tamil: "ன", romanization: "ṉ", group: "mellinam", example: "மனம்", exampleMeaning: "mind", tip: "Alveolar nasal (ṉ) — like 'n' in 'no'. Appears word-finally and word-medially, never word-initially. Distinct from dental ந (n)" },
+  // Idaiyinam (Medium) — ய் ர் ல் வ் ழ் ள்
+  { tamil: "ய", romanization: "y", group: "idaiyinam", example: "யானை", exampleMeaning: "elephant", tip: "Like 'y' in 'yes'" },
+  { tamil: "ர", romanization: "r", group: "idaiyinam", example: "ரயில்", exampleMeaning: "train", tip: "Trilled 'r'" },
+  { tamil: "ல", romanization: "l", group: "idaiyinam", example: "லட்டு", exampleMeaning: "sweet ball", tip: "Dental 'l' — tongue tip against upper teeth" },
+  { tamil: "வ", romanization: "v", group: "idaiyinam", example: "வீடு", exampleMeaning: "house", tip: "Like 'v' in 'vine'" },
+  { tamil: "ழ", romanization: "zh", group: "idaiyinam", example: "தமிழ்", exampleMeaning: "Tamil", tip: "The most distinctive Tamil sound — retroflex approximant, no English equivalent. Never drop or substitute this!" },
+  { tamil: "ள", romanization: "L", group: "idaiyinam", example: "வளர்", exampleMeaning: "grow", tip: "Retroflex 'l' — tongue curled back (distinct from ல)" },
 ];

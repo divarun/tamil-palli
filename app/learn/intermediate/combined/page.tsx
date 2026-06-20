@@ -52,7 +52,7 @@ export default function CombinedPage() {
               onClick={() => setSelectedConsonant(c === selectedConsonant ? null : c)}
               className={`px-3 py-1 rounded-full text-lg tamil-text transition-colors ${selectedConsonant === c ? "bg-orange-500 text-white" : "bg-white border border-gray-200 text-gray-800 hover:border-orange-300"}`}
             >
-              {c}
+              {c}்
             </button>
           ))}
         </div>
@@ -83,7 +83,7 @@ export default function CombinedPage() {
                 return (
                   <tr key={c} className={selectedConsonant === c ? "bg-blue-50" : ""}>
                     <td className="p-2 border border-gray-100 bg-blue-50 sticky left-0 z-10">
-                      <div className="text-lg tamil-text font-bold text-blue-800">{c}</div>
+                      <div className="text-lg tamil-text font-bold text-blue-800">{c}்</div>
                       <div className="text-xs text-blue-600">{con?.romanization}</div>
                     </td>
                     {vowelOrder.map((v) => {

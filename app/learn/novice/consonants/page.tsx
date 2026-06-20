@@ -44,7 +44,7 @@ export default function ConsonantsPage() {
         <Link href="/learn/novice/vowels" className="text-orange-600 underline">Romanization Key</Link> on the Vowels page.</p>
 
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 text-sm text-amber-800">
-        <strong>Note:</strong> Each consonant is shown in its full form (with inherent vowel "a"). In words, they combine with vowels using diacritics — you'll learn that in the Combined Letters lesson.
+        <strong>Note:</strong> Each consonant is shown in its pure form with the pulli (்) — e.g. க் is the pure consonant "k". When a consonant combines with a vowel it becomes an உயிர்மெய் (e.g. க் + அ = க, க் + ஆ = கா). You'll learn all 216 combinations in the Combined Letters lesson.
       </div>
 
       {groups.map((group) => {
@@ -62,7 +62,7 @@ export default function ConsonantsPage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {groupConsonants.map((c) => (
                 <div key={c.tamil} className="rounded-xl border border-gray-200 bg-white p-4 flex flex-col items-center text-center gap-2">
-                  <span className="text-5xl tamil-text font-bold text-gray-800 leading-none">{c.tamil}</span>
+                  <span className="text-5xl tamil-text font-bold text-gray-800 leading-none">{c.tamil}்</span>
                   <span className="text-orange-600 font-medium text-sm">{c.romanization}</span>
                   <div className="text-xs text-gray-500 italic">{c.tip}</div>
                   <div className="text-xs text-gray-700">

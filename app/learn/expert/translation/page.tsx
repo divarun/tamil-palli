@@ -40,7 +40,7 @@ const englishToTamil = [
     english: "She gave the book to her younger brother.",
     hints: ["'gave' = கொடுத்தாள் (past, feminine)", "'book' = புத்தகம்", "'to her younger brother' = தன் தம்பிக்கு (dative case: -க்கு)", "'younger brother' = தம்பி"],
     modelTranslation: "அவள் தன் தம்பிக்கு புத்தகம் கொடுத்தாள்.",
-    notes: "Dative case (நோக்கு வேற்றுமை) suffix -க்கு marks the recipient. 'தன்' is the reflexive pronoun (her own) — use it when subject and possessor are the same person.",
+    notes: "Dative case (கொடை வேற்றுமை) suffix -க்கு marks the recipient. 'தன்' is the reflexive pronoun (her own) — use it when subject and possessor are the same person.",
   },
   {
     english: "Although it rained heavily, the farmers worked in the fields.",

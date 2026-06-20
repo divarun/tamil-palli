@@ -83,11 +83,11 @@ export const exercises: Exercise[] = [
     exerciseType: "letter-recognition",
     topicId: "novice-consonants",
     questions: [
-      { type: "letter-recognition", letter: "க", correct: "ka", choices: ["ka", "cha", "ta", "pa"] },
-      { type: "letter-recognition", letter: "ச", correct: "cha", choices: ["ka", "cha", "pa", "ra"] },
-      { type: "letter-recognition", letter: "ட", correct: "ta", choices: ["tha", "ta", "na", "la"] },
-      { type: "letter-recognition", letter: "ம", correct: "ma", choices: ["ma", "na", "ya", "va"] },
-      { type: "letter-recognition", letter: "ழ", correct: "zha", choices: ["la", "ra", "zha", "va"] },
+      { type: "letter-recognition", letter: "க்", correct: "k", choices: ["k", "c", "t", "p"] },
+      { type: "letter-recognition", letter: "ச்", correct: "c", choices: ["k", "c", "p", "r"] },
+      { type: "letter-recognition", letter: "ட்", correct: "t", choices: ["th", "t", "n", "l"] },
+      { type: "letter-recognition", letter: "ம்", correct: "m", choices: ["m", "n", "y", "v"] },
+      { type: "letter-recognition", letter: "ழ்", correct: "zh", choices: ["l", "r", "zh", "v"] },
     ],
   },
   {
