@@ -68,7 +68,7 @@ export const sandhiRules: SandhiRule[] = [
     pattern: "C(final) + C(initial) → various changes",
     examples: [
       { before: "கல் + தூண்", after: "கற்றூண்", romanization: "katroon", english: "stone pillar (ல் becomes ற்)" },
-      { before: "பால் + கடை", after: "பாற்கடை", romanization: "paarkkadai", english: "milk shop (ல் becomes ற்)" },
+      { before: "பால் + கடை", after: "பாற்கடை", romanization: "paarkadai", english: "milk shop (ல் becomes ற்)" },
       { before: "நீர் + வீழ்ச்சி", after: "நீர்வீழ்ச்சி", romanization: "neerveeicchi", english: "waterfall (direct compound)" },
     ],
   },

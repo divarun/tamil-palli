@@ -8,6 +8,16 @@ const comparisons = [
   { context: "I ate", formal: "நான் சாப்பிட்டேன்", colloquial: "சாப்பிட்டேன்", fRoman: "naan saappitten", cRoman: "saappitten", note: "Spoken Tamil often drops the subject pronoun" },
   { context: "What are you doing?", formal: "நீங்கள் என்ன செய்கிறீர்கள்?", colloquial: "என்ன பண்றே?", fRoman: "neengal enna seikireeragal?", cRoman: "enna panre?", note: "Colloquial uses completely different verb forms" },
   { context: "He is not coming", formal: "அவர் வருவதில்லை", colloquial: "அவன் வரல", fRoman: "avar varuvadhillai", cRoman: "avan varal", note: "Colloquial negative is formed differently (வரல instead of வருவதில்லை)" },
+  { context: "I don't know", formal: "எனக்குத் தெரியவில்லை", colloquial: "தெரியல", fRoman: "enakku theriyavillai", cRoman: "theriyala", note: "-வில்லை (formal negative) contracts to -ல in colloquial" },
+  { context: "Where are you going?", formal: "நீங்கள் எங்கே போகிறீர்கள்?", colloquial: "எங்க போற?", fRoman: "neengal enge pogireeragal?", cRoman: "enga pore?", note: "எங்கே → எங்க; verb ending shortened" },
+  { context: "I am coming", formal: "நான் வருகிறேன்", colloquial: "வறேன்", fRoman: "naan varugireen", cRoman: "varen", note: "Present marker -கிற- is compressed; subject pronoun dropped" },
+  { context: "Come here (polite)", formal: "இங்கே வாருங்கள்", colloquial: "இங்க வாங்க", fRoman: "inge vaarungal", cRoman: "inga vaanga", note: "இங்கே → இங்க; வாருங்கள் → வாங்க (colloquial polite imperative)" },
+  { context: "Did you eat?", formal: "நீங்கள் சாப்பிட்டீர்களா?", colloquial: "சாப்பிட்டியா?", fRoman: "neengal saappitteergalaa?", cRoman: "saappittiyaa?", note: "Formal plural -கள்+ஆ? reduced to -ியா? in colloquial" },
+  { context: "It is raining", formal: "மழை பெய்கிறது", colloquial: "மழை பெய்யுது", fRoman: "mazhai peykidhu", cRoman: "mazhai peyyudhu", note: "Present marker -கிறது → -உது; one of the most consistent colloquial shifts" },
+  { context: "He went", formal: "அவர் சென்றார்", colloquial: "அவன் போனான்", fRoman: "avar sendraar", cRoman: "avan poonaan", note: "Formal uses செல் (literary verb for 'go'); colloquial uses போ entirely" },
+  { context: "I understand", formal: "எனக்குப் புரிகிறது", colloquial: "புரியுது", fRoman: "enakku purigiradhu", cRoman: "puriyudhu", note: "-கிறது → -யுது; எனக்கு (to me) dropped in casual speech" },
+  { context: "I don't have it", formal: "என்னிடம் இல்லை", colloquial: "என்கிட்ட இல்ல", fRoman: "ennidham illai", cRoman: "enkitta illa", note: "என்னிடம் (formal postposition) → என்கிட்ட; இல்லை → இல்ல" },
+  { context: "She is beautiful", formal: "அவள் அழகாக இருக்கிறாள்", colloquial: "அவ அழகா இருக்கா", fRoman: "aval azhagaaha irukkiraal", cRoman: "ava azhagaa irukkaa", note: "அவள் → அவ (pronoun shortening); adverbial -க dropped; verb suffix shortened" },
 ];
 
 export default function FormalColloquialPage() {

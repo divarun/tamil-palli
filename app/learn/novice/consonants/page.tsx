@@ -84,9 +84,9 @@ export default function ConsonantsPage() {
         <div className="grid sm:grid-cols-2 gap-3 mb-3">
           {[
             { single: "பல", singleMeaning: "many", doubled: "பல்லு / பல்", doubledMeaning: "tooth (with full geminate in speech)" },
-            { single: "கல", singleMeaning: "(verb root: to learn)", doubled: "கல்லு / கல்", doubledMeaning: "stone" },
-            { single: "தட", singleMeaning: "to tap / hit", doubled: "தட்டு", doubledMeaning: "plate / tray" },
-            { single: "படி", singleMeaning: "to read / step", doubled: "பட்டி", doubledMeaning: "list / cattle pen" },
+            { single: "படு", singleMeaning: "to lie down / happen", doubled: "பட்டு", doubledMeaning: "silk" },
+            { single: "வலி", singleMeaning: "pain", doubled: "வல்லி", doubledMeaning: "vine / creeper" },
+            { single: "கடி", singleMeaning: "to bite", doubled: "கட்டி", doubledMeaning: "lump / solid" },
           ].map((ex) => (
             <div key={ex.single} className="bg-white border border-red-100 rounded-xl p-3">
               <div className="flex gap-4 text-sm">
