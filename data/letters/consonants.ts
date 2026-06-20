@@ -18,7 +18,7 @@ export const groupLabels: Record<ConsonantGroup, { english: string; tamil: strin
 export const consonants: Consonant[] = [
   // Vallinam (Hard) — க ச ட த ப ற
   { tamil: "க", romanization: "ka", group: "vallinam", example: "கல்", exampleMeaning: "stone", tip: "Like 'k' in 'kite'" },
-  { tamil: "ச", romanization: "cha", group: "vallinam", example: "சந்தை", exampleMeaning: "market", tip: "Like 'ch' or 's' depending on position" },
+  { tamil: "ச", romanization: "ca", group: "vallinam", example: "சந்தை", exampleMeaning: "market", tip: "Position-dependent: sounds like 'ch' at the start of a word, like 's' or 'ss' between vowels. Romanized 'ca' (ISO standard)" },
   { tamil: "ட", romanization: "ta", group: "vallinam", example: "டாக்டர்", exampleMeaning: "doctor", tip: "Retroflex 't' — tongue curled back" },
   { tamil: "த", romanization: "tha", group: "vallinam", example: "தாய்", exampleMeaning: "mother", tip: "Dental 't' — like 'th' in 'the'" },
   { tamil: "ப", romanization: "pa", group: "vallinam", example: "பால்", exampleMeaning: "milk", tip: "Like 'p' in 'pot'" },
@@ -29,7 +29,7 @@ export const consonants: Consonant[] = [
   { tamil: "ண", romanization: "Na", group: "mellinam", example: "பண்", exampleMeaning: "tune", tip: "Retroflex nasal — tongue tip curled back (distinct from ந and ன)" },
   { tamil: "ந", romanization: "na", group: "mellinam", example: "நல்லது", exampleMeaning: "good", tip: "Dental nasal — tongue against upper teeth" },
   { tamil: "ம", romanization: "ma", group: "mellinam", example: "மரம்", exampleMeaning: "tree", tip: "Like 'm' in 'mother'" },
-  { tamil: "ன", romanization: "na", group: "mellinam", example: "மனம்", exampleMeaning: "mind", tip: "Alveolar nasal — like 'n' in 'no' (word-final and word-medial; not word-initial)" },
+  { tamil: "ன", romanization: "ṉa", group: "mellinam", example: "மனம்", exampleMeaning: "mind", tip: "Alveolar nasal (ṉ) — like 'n' in 'no'. Appears word-finally and word-medially, never word-initially. Distinct from dental ந (na)" },
   // Idaiyinam (Medium) — ய ர ல வ ழ ள
   { tamil: "ய", romanization: "ya", group: "idaiyinam", example: "யானை", exampleMeaning: "elephant", tip: "Like 'y' in 'yes'" },
   { tamil: "ர", romanization: "ra", group: "idaiyinam", example: "ரயில்", exampleMeaning: "train", tip: "Trilled 'r'" },

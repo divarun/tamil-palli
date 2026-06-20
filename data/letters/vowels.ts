@@ -1,7 +1,7 @@
 export type Vowel = {
   tamil: string;
   romanization: string;
-  length: "short" | "long";
+  length: "short" | "long" | "diphthong";
   pair?: string; // paired vowel (short↔long)
   example: string;
   exampleMeaning: string;
@@ -17,10 +17,10 @@ export const vowels: Vowel[] = [
   { tamil: "ஊ", romanization: "uu", length: "long", pair: "உ", example: "ஊர்", exampleMeaning: "village", tip: "Long 'oo' as in 'food'" },
   { tamil: "எ", romanization: "e", length: "short", pair: "ஏ", example: "எலி", exampleMeaning: "mouse", tip: "Short 'e' as in 'pet'" },
   { tamil: "ஏ", romanization: "ey", length: "long", pair: "எ", example: "ஏணி", exampleMeaning: "ladder", tip: "Long mid 'e' as in 'they' — distinct from ஈ (ii)" },
-  { tamil: "ஐ", romanization: "ai", length: "short", pair: undefined, example: "ஐந்து", exampleMeaning: "five", tip: "Like 'eye'" },
+  { tamil: "ஐ", romanization: "ai", length: "diphthong", pair: undefined, example: "ஐந்து", exampleMeaning: "five", tip: "Diphthong — glides from 'a' to 'i', like 'eye'. Has no long counterpart." },
   { tamil: "ஒ", romanization: "o", length: "short", pair: "ஓ", example: "ஒட்டகம்", exampleMeaning: "camel", tip: "Short 'o' as in 'not'" },
   { tamil: "ஓ", romanization: "oo", length: "long", pair: "ஒ", example: "ஓடு", exampleMeaning: "run", tip: "Long 'o' as in 'go'" },
-  { tamil: "ஔ", romanization: "au", length: "short", pair: undefined, example: "ஔடதம்", exampleMeaning: "medicine", tip: "Like 'ow' in 'cow'" },
+  { tamil: "ஔ", romanization: "au", length: "diphthong", pair: undefined, example: "ஔடதம்", exampleMeaning: "medicine (archaic/classical; modern: மருந்து)", tip: "Diphthong — glides from 'a' to 'u', like 'ow' in 'cow'. Rare in modern speech; more common in classical Tamil. Has no long counterpart." },
 ];
 
 export const shortLongPairs = [

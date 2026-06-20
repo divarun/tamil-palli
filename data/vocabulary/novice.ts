@@ -18,7 +18,7 @@ export const greetings: VocabItem[] = [
   { tamil: "என் பெயர்...", romanization: "en peyar...", english: "My name is...", category: "greetings" },
   { tamil: "காலை வணக்கம்", romanization: "kaalai vanakkam", english: "Good morning", category: "greetings" },
   { tamil: "மாலை வணக்கம்", romanization: "maalai vanakkam", english: "Good evening", category: "greetings" },
-  { tamil: "இரவு வணக்கம்", romanization: "iravu vanakkam", english: "Good night", category: "greetings" },
+  { tamil: "இரவு வணக்கம்", romanization: "iravu vanakkam", english: "Good night (formal evening greeting; வணக்கம் = respectful greeting, not a farewell)", category: "greetings" },
 ];
 
 export const colors: VocabItem[] = [
@@ -58,8 +58,12 @@ export const family: VocabItem[] = [
   { tamil: "தம்பி", romanization: "thambi", english: "Younger brother", category: "family" },
   { tamil: "தாத்தா", romanization: "thaattha", english: "Grandfather", category: "family" },
   { tamil: "பாட்டி", romanization: "paatti", english: "Grandmother", category: "family" },
-  { tamil: "மாமா", romanization: "maama", english: "Uncle (maternal)", category: "family" },
-  { tamil: "அத்தை", romanization: "atthai", english: "Aunt (paternal)", category: "family" },
+  { tamil: "மாமா", romanization: "maama", english: "Mother's brother (maternal uncle); also used for father-in-law", category: "family" },
+  { tamil: "அத்தை", romanization: "atthai", english: "Father's sister (paternal aunt)", category: "family" },
+  { tamil: "சித்தி", romanization: "chitti", english: "Mother's younger sister", category: "family" },
+  { tamil: "பெரியம்மா", romanization: "periyamma", english: "Mother's elder sister", category: "family" },
+  { tamil: "சித்தப்பா", romanization: "chittappa", english: "Father's younger brother", category: "family" },
+  { tamil: "பெரியப்பா", romanization: "periyappa", english: "Father's elder brother", category: "family" },
   { tamil: "மகன்", romanization: "makan", english: "Son", category: "family" },
   { tamil: "மகள்", romanization: "makal", english: "Daughter", category: "family" },
 ];
@@ -77,6 +81,13 @@ export const numbers: VocabItem[] = [
   { tamil: "பத்து", romanization: "pattu", english: "Ten (10)", category: "numbers" },
   { tamil: "பதினொன்று", romanization: "padhinondru", english: "Eleven (11)", category: "numbers" },
   { tamil: "பன்னிரண்டு", romanization: "pannirandu", english: "Twelve (12)", category: "numbers" },
+  { tamil: "பதின்மூன்று", romanization: "padinmoondru", english: "Thirteen (13)", category: "numbers" },
+  { tamil: "பதினான்கு", romanization: "padhinaanku", english: "Fourteen (14)", category: "numbers" },
+  { tamil: "பதினைந்து", romanization: "padinaindhu", english: "Fifteen (15)", category: "numbers" },
+  { tamil: "பதினாறு", romanization: "padhinaaru", english: "Sixteen (16)", category: "numbers" },
+  { tamil: "பதினேழு", romanization: "padhinezhu", english: "Seventeen (17)", category: "numbers" },
+  { tamil: "பதினெட்டு", romanization: "padhinettu", english: "Eighteen (18)", category: "numbers" },
+  { tamil: "பத்தொன்பது", romanization: "pathonbadhu", english: "Nineteen (19)", category: "numbers" },
   { tamil: "இருபது", romanization: "irupadu", english: "Twenty (20)", category: "numbers" },
   { tamil: "முப்பது", romanization: "muppadu", english: "Thirty (30)", category: "numbers" },
   { tamil: "நாற்பது", romanization: "naarpadu", english: "Forty (40)", category: "numbers" },

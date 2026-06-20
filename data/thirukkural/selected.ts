@@ -45,8 +45,8 @@ export const selectedKurals: Kural[] = [
     explanation: "Those who seek the divine, who is beyond attachment and aversion, will be free from suffering.",
   },
   {
-    id: 21,
-    chapter: 3,
+    id: 14,
+    chapter: 2,
     chapterName: "The Excellence of Rain (வான் சிறப்பு)",
     line1: "விண்இன்று பொய்ப்பின் விரிநீர் வியனுலகத்து",
     line2: "உண்டி கொடாது உயிர் மாய்க்கும்",

@@ -16,9 +16,9 @@ export const sandhiRules: SandhiRule[] = [
       "When a word ending in a vowel is followed by a word beginning with a vowel, the glide consonants ய் (y) or வ் (v) are inserted. ய் after front vowels (இ, ஈ, எ, ஏ, ஐ), வ் after back vowels (உ, ஊ, ஒ, ஓ, ஔ), and typically ய் after அ/ஆ.",
     pattern: "V + V → V + y/v + V",
     examples: [
-      { before: "தமிழ் + இல் = தமிழி?", after: "தமிழில்", romanization: "tamilil", english: "in Tamil (no sandhi needed as ழ் is a consonant)" },
-      { before: "அது + ஆகும்", after: "அதுவாகும்", romanization: "adhuvaakum", english: "it will become (வ் inserted)" },
-      { before: "இந்த + ஊர்", after: "இந்த ஊர்", romanization: "indha oor", english: "this village (space preserved in modern writing)" },
+      { before: "நீ + இல்லை", after: "நீயில்லை", romanization: "neeyillai", english: "you are not here (ய் inserted after front vowel ஈ before a vowel)" },
+      { before: "அது + ஆகும்", after: "அதுவாகும்", romanization: "adhuvaakum", english: "it will become (வ் inserted after back vowel உ before a vowel)" },
+      { before: "பூ + இதழ்", after: "பூவிதழ்", romanization: "poovithal", english: "flower petal — common compound (வ் inserted after back vowel ஊ)" },
     ],
   },
   {

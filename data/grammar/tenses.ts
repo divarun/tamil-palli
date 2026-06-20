@@ -18,7 +18,7 @@ export const tenses: TenseRule[] = [
     tamilName: "இறந்த காலம் (Iranta Kaalam)",
     suffix: "-ந்தேன் / -டேன் / -த்தேன்",
     description:
-      "Past tense in Tamil uses different suffixes depending on the verb class. The most common is -ந்தேன் (I did) for the first person singular. The suffix changes with person and number.",
+      "Past tense in Tamil uses different suffixes depending on the verb class (வினைவகை). Tamil verbs are grouped into classes that determine which ending they take — the three most common past markers are -ந்தேன், -டேன், and -த்தேன். The suffix also changes with person and number. If a verb takes a different ending than expected, it belongs to a different verb class — verb classes are taught in the Advanced level.",
     examples: [
       { tamil: "நான் சாப்பிட்டேன்", romanization: "naan saappitten", english: "I ate" },
       { tamil: "அவன் வந்தான்", romanization: "avan vandhaan", english: "He came" },

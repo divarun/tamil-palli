@@ -33,10 +33,22 @@ export default function VowelsPage() {
         </button>
       </div>
 
+      {/* Romanization Key */}
+      <section className="mb-8 bg-amber-50 border border-amber-200 rounded-xl p-4">
+        <h2 className="text-sm font-semibold text-amber-800 mb-2">Romanization Key — used throughout this app</h2>
+        <ul className="text-xs text-amber-700 space-y-1">
+          <li><span className="font-mono font-bold">aa / ii / uu</span> — double letter = long vowel (e.g., aa = ஆ, ii = ஈ, uu = ஊ)</li>
+          <li><span className="font-mono font-bold">zh</span> — the unique Tamil retroflex approximant (ழ) — no English equivalent</li>
+          <li><span className="font-mono font-bold">N</span> (capital) — retroflex nasal (ண), distinct from dental <span className="font-mono">n</span> (ந)</li>
+          <li><span className="font-mono font-bold">ṉ</span> — alveolar nasal (ன), distinct from dental <span className="font-mono">n</span> (ந)</li>
+          <li><span className="font-mono font-bold">L</span> (capital) — retroflex lateral (ள), distinct from dental <span className="font-mono">l</span> (ல)</li>
+        </ul>
+      </section>
+
       {/* Short/Long Pairs */}
       <section className="mb-8">
         <h2 className="text-lg font-semibold text-gray-800 mb-2">Short & Long Vowel Pairs</h2>
-        <p className="text-sm text-gray-500 mb-4">Tamil has 5 pairs of short (குறில்) and long (நெடில்) vowels, plus 2 standalone vowels (ஐ, ஔ).</p>
+        <p className="text-sm text-gray-500 mb-4">Tamil has 5 pairs of short (குறில்) and long (நெடில்) vowels, plus 2 diphthongs (ஐ, ஔ) which have no long form.</p>
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-4">
           {shortLongPairs.map((pair) => (
             <div key={pair.short} className="rounded-xl border border-orange-100 bg-white p-3 text-center">
@@ -66,8 +78,8 @@ export default function VowelsPage() {
             <div key={v.tamil} className="rounded-2xl border-2 border-orange-100 bg-white p-4 flex flex-col items-center text-center gap-2">
               <span className="text-6xl tamil-text font-bold text-gray-800 leading-none">{v.tamil}</span>
               <span className="text-orange-600 font-medium text-sm">{v.romanization}</span>
-              <span className={`text-xs px-2 py-0.5 rounded-full ${v.length === "short" ? "bg-blue-50 text-blue-600" : "bg-amber-50 text-amber-600"}`}>
-                {v.length === "short" ? "குறில் short" : "நெடில் long"}
+              <span className={`text-xs px-2 py-0.5 rounded-full ${v.length === "short" ? "bg-blue-50 text-blue-600" : v.length === "long" ? "bg-amber-50 text-amber-600" : "bg-purple-50 text-purple-600"}`}>
+                {v.length === "short" ? "குறில் short" : v.length === "long" ? "நெடில் long" : "மிகு diphthong"}
               </span>
               <div className="text-xs text-gray-500 italic">{v.tip}</div>
               <div className="text-xs text-gray-700">
@@ -89,7 +101,7 @@ export default function VowelsPage() {
             { short: "பல்", shortRom: "pal", shortMeaning: "tooth", long: "பால்", longRom: "paal", longMeaning: "milk" },
             { short: "கல்", shortRom: "kal", shortMeaning: "stone", long: "கால்", longRom: "kaal", longMeaning: "leg / foot" },
             { short: "மின்", shortRom: "min", shortMeaning: "electricity / lightning", long: "மீன்", longRom: "meen", longMeaning: "fish" },
-            { short: "புல்", shortRom: "pul", shortMeaning: "grass", long: "பூல்", longRom: "pool", longMeaning: "thread (dialectal) — avoid confusion" },
+            { short: "குடம்", shortRom: "kudam", shortMeaning: "pot / vessel", long: "கூடம்", longRom: "koodam", longMeaning: "hall / gathering place" },
             { short: "வெர்", shortRom: "ver", shortMeaning: "(dialectal form)", long: "வேர்", longRom: "veyr", longMeaning: "root (of a plant)" },
             { short: "உரு", shortRom: "uru", shortMeaning: "shape / form", long: "ஊரு", longRom: "uuru", longMeaning: "thigh (colloquial); also ஊர் = village" },
           ].map((pair) => (
