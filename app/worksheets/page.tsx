@@ -826,10 +826,10 @@ function WorksheetPrintContent({ ws }: { ws: Worksheet }) {
     );
   }
 
-  if (ws.id === "ws-silappatikaram") {
+  if (ws.id === "ws-kambaramayanam") {
     const verses = [
-      { text: "மன்னன் பிழைத்தாலும் மழை பிழைக்கா — The king may err, but rain does not.", label: "Silappatikaram — Mangala Vaazhthu" },
-      { text: "ஊழ்வினை உருத்துவந்து ஊட்டும் — Fate, having matured, comes to deliver its due.", label: "Silappatikaram — Madurai Kandam" },
+      { text: "உலகம் யாவையும் தாம் உள ஆக்கலும் நிலைபெறுத்தலும் நீக்கலும் நீங்கலா — Who can know the nature of the One who creates, sustains, and dissolves all worlds?", label: "Kambaramayanam — Payiram (Prologue)" },
+      { text: "கடல் கண்டான் கரை கண்டான் — He saw the ocean; he saw the far shore.", label: "Kambaramayanam — Sundara Kandam" },
     ];
     return (
       <div className="print-page">

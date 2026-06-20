@@ -277,13 +277,13 @@ export const worksheets: Worksheet[] = [
     printInstructions: "Fill every cell of the table. Cross-check using the verb paradigm chart on the reverse.",
   },
   {
-    id: "ws-silappatikaram",
-    title: "Silappatikaram Verse & Analysis",
-    tamilTitle: "சிலப்பதிகாரம் தாள்",
+    id: "ws-kambaramayanam",
+    title: "Kambaramayanam Verse & Analysis",
+    tamilTitle: "கம்பராமாயணம் தாள்",
     level: "expert",
     topic: "Classical Literature",
     layout: "copy",
-    description: "Copy selected verses from Silappatikaram (சிலப்பதிகாரம்), then answer analysis questions on theme, character, and poetic devices.",
+    description: "Copy selected verses from Kambaramayanam (கம்பராமாயணம்), then answer analysis questions on theme, character, and poetic devices.",
     printInstructions: "Copy each verse carefully in the lined space, then answer the questions below it.",
   },
   {

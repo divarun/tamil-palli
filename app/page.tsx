@@ -35,8 +35,8 @@ const levels = [
     name: "Expert",
     tamilName: "வல்லுநர் நிலை",
     duration: "12 lessons",
-    description: "Classical Mastery & Literary Tamil — Silappatikaram, prosody, translation, dialects",
-    highlights: ["Silappatikaram epic", "Tamil metres (யாப்பு)", "Dialects & linguistics", "Creative & literary writing"],
+    description: "Classical Mastery & Literary Tamil — Kambaramayanam, prosody, translation, dialects",
+    highlights: ["Kambaramayanam epic", "Tamil metres (யாப்பு)", "Dialects & linguistics", "Creative & literary writing"],
   },
 ];
 

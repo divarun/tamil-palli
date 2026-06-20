@@ -49,7 +49,7 @@ export const topics: Topic[] = [
   { id: "adv-sangam", title: "Introduction to Sangam Literature", tamilTitle: "சங்க இலக்கியம்", level: "advanced", tags: ["classical", "culture"], lessonRoute: "/learn/advanced/sangam", worksheetIds: ["ws-sangam"], estimatedLessons: 1, order: 8 },
   // Expert
   { id: "exp-verb-mastery", title: "Advanced Verb Conjugation", tamilTitle: "வினைச்சொல் திறன்", level: "expert", tags: ["grammar"], lessonRoute: "/learn/expert/verb-mastery", worksheetIds: ["ws-verb-mastery"], estimatedLessons: 2, order: 1 },
-  { id: "exp-silappatikaram", title: "Silappatikaram", tamilTitle: "சிலப்பதிகாரம்", level: "expert", tags: ["classical", "literature"], lessonRoute: "/learn/expert/silappatikaram", worksheetIds: ["ws-silappatikaram"], estimatedLessons: 2, order: 2 },
+  { id: "exp-kambaramayanam", title: "Kambaramayanam", tamilTitle: "கம்பராமாயணம்", level: "expert", tags: ["classical", "literature"], lessonRoute: "/learn/expert/kambaramayanam", worksheetIds: ["ws-kambaramayanam"], estimatedLessons: 2, order: 2 },
   { id: "exp-prosody", title: "Tamil Poetry & Metres", tamilTitle: "யாப்பிலக்கணம்", level: "expert", tags: ["classical", "literature"], lessonRoute: "/learn/expert/prosody", worksheetIds: ["ws-prosody"], estimatedLessons: 2, order: 3 },
   { id: "exp-translation", title: "Translation Practice", tamilTitle: "மொழிபெயர்ப்பு பயிற்சி", level: "expert", tags: ["writing", "reading"], lessonRoute: "/learn/expert/translation", worksheetIds: ["ws-translation"], estimatedLessons: 2, order: 4 },
   { id: "exp-dialects", title: "Tamil Dialects", tamilTitle: "தமிழ் வட்டார வழக்குகள்", level: "expert", tags: ["culture", "speaking"], lessonRoute: "/learn/expert/dialects", worksheetIds: ["ws-dialects"], estimatedLessons: 1, order: 5 },
