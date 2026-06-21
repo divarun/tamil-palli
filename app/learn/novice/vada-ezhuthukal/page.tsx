@@ -3,11 +3,13 @@
 import { vadaEzhuthukal } from "@/data/letters/vada-ezhuthukal";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 export default function VadaPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("novice-vada");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -42,7 +44,7 @@ export default function VadaPage() {
             <div className="flex items-start gap-4 mb-4">
               <span className="text-6xl tamil-text font-bold text-gray-800 leading-none">{letter.tamil}</span>
               <div className="flex-1">
-                <div className="text-xl text-orange-600 font-medium">{letter.romanization}</div>
+                {showRomanization && <div className="text-xl text-orange-600 font-medium">{letter.romanization}</div>}
                 <div className="text-sm text-gray-500 italic">{letter.sound}</div>
                 <div className="text-xs text-gray-400 mt-1">{letter.origin}</div>
               </div>
@@ -62,6 +64,7 @@ export default function VadaPage() {
       </div>
 
       <div className="mt-8 flex gap-3">
+        <Link href="/learn/novice/word-formation" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← Word Formation</Link>
         <Link href="/tests/novice" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Take Novice Assessment →
         </Link>

@@ -2,6 +2,7 @@
 
 import { useProgress } from "@/hooks/useProgress";
 import { AudioButton } from "@/components/AudioButton";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const partsOfSpeech = [
@@ -54,6 +55,7 @@ const partsOfSpeech = [
 export default function PartsOfSpeechPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("int-parts-of-speech");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -89,7 +91,7 @@ export default function PartsOfSpeechPage() {
               {pos.examples.map((ex) => (
                 <div key={ex.tamil} className="flex items-center gap-3 bg-amber-50 rounded-lg p-3">
                   <span className="tamil-text text-gray-800 font-medium">{ex.tamil}</span>
-                  <span className="text-xs text-orange-600">{ex.romanization}</span>
+                  {showRomanization && <span className="text-xs text-orange-600">{ex.romanization}</span>}
                   <span className="text-xs text-gray-500">— {ex.english}</span>
                   <AudioButton text={ex.tamil} size="sm" className="ml-auto" />
                 </div>
@@ -101,6 +103,7 @@ export default function PartsOfSpeechPage() {
       </div>
 
       <div className="flex gap-3 mt-8">
+        <Link href="/learn/intermediate/reading" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← Reading Practice</Link>
         <Link href="/learn/intermediate/tenses" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Next: 3 Tenses →
         </Link>

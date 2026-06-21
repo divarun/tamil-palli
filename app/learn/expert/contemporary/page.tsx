@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useProgress } from "@/hooks/useProgress";
 import { AudioButton } from "@/components/AudioButton";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const newsPassage = {
@@ -51,6 +52,7 @@ export default function ContemporaryPage() {
   const [revealed, setRevealed] = useState(false);
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("exp-contemporary");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -71,7 +73,7 @@ export default function ContemporaryPage() {
           <div className="flex items-start gap-2 mb-3">
             <div className="flex-1">
               <h3 className="tamil-text font-bold text-gray-900 text-lg mb-0.5">{newsPassage.headline}</h3>
-              <p className="text-xs text-gray-400 italic">{newsPassage.headlineRom}</p>
+              {showRomanization && <p className="text-xs text-gray-400 italic">{newsPassage.headlineRom}</p>}
             </div>
             <AudioButton text={newsPassage.headline} />
           </div>

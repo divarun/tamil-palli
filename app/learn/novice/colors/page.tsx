@@ -3,6 +3,7 @@
 import { colors } from "@/data/vocabulary/novice";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const colorBgs: Record<string, string> = {
@@ -21,6 +22,7 @@ const colorBgs: Record<string, string> = {
 export default function ColorsPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("novice-colors");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -56,7 +58,7 @@ export default function ColorsPage() {
               <div className="p-3 flex items-center gap-2">
                 <div className="flex-1">
                   <div className="text-lg tamil-text font-bold text-gray-800">{item.tamil}</div>
-                  <div className="text-xs text-orange-600">{item.romanization}</div>
+                  {showRomanization && <div className="text-xs text-orange-600">{item.romanization}</div>}
                 </div>
                 <AudioButton text={item.tamil} size="sm" />
               </div>
@@ -66,6 +68,7 @@ export default function ColorsPage() {
       </div>
 
       <div className="flex gap-3 mt-8">
+        <Link href="/learn/novice/greetings" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← Greetings</Link>
         <Link href="/learn/novice/body" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Next: Body Parts →
         </Link>

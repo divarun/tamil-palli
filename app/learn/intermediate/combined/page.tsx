@@ -6,12 +6,14 @@ import { vowels } from "@/data/letters/vowels";
 import { consonants } from "@/data/letters/consonants";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 export default function CombinedPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("int-combined");
   const [selectedConsonant, setSelectedConsonant] = useState<string | null>(null);
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
@@ -69,7 +71,7 @@ export default function CombinedPage() {
                 return (
                   <th key={v} className="p-2 border border-gray-100 bg-amber-50 min-w-[56px]">
                     <div className="text-lg tamil-text font-bold text-amber-800">{v}</div>
-                    <div className="text-xs text-amber-600">{vowel?.romanization}</div>
+                    {showRomanization && <div className="text-xs text-amber-600">{vowel?.romanization}</div>}
                   </th>
                 );
               })}
@@ -84,7 +86,7 @@ export default function CombinedPage() {
                   <tr key={c} className={selectedConsonant === c ? "bg-blue-50" : ""}>
                     <td className="p-2 border border-gray-100 bg-blue-50 sticky left-0 z-10">
                       <div className="text-lg tamil-text font-bold text-blue-800">{c}்</div>
-                      <div className="text-xs text-blue-600">{con?.romanization}</div>
+                      {showRomanization && <div className="text-xs text-blue-600">{con?.romanization}</div>}
                     </td>
                     {vowelOrder.map((v) => {
                       const combined = getCombined(c, v);

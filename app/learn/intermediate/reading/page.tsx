@@ -2,6 +2,7 @@
 
 import { useProgress } from "@/hooks/useProgress";
 import { AudioButton } from "@/components/AudioButton";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const readingExamples = [
@@ -23,6 +24,7 @@ const sentences = [
 export default function ReadingPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("int-reading");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -52,7 +54,7 @@ export default function ReadingPage() {
         {readingExamples.map((ex) => (
           <div key={ex.word} className="bg-white border border-orange-100 rounded-xl p-4 flex flex-col items-center text-center gap-2">
             <span className="text-3xl tamil-text font-bold text-gray-900">{ex.word}</span>
-            <span className="text-xs text-orange-600">{ex.romanization}</span>
+            {showRomanization && <span className="text-xs text-orange-600">{ex.romanization}</span>}
             <span className="text-xs text-gray-500">{ex.meaning}</span>
             <span className="text-xs text-gray-300">{ex.level}</span>
             <AudioButton text={ex.word} size="sm" />
@@ -66,7 +68,7 @@ export default function ReadingPage() {
           <div key={s.tamil} className="bg-white border border-orange-100 rounded-xl p-4 flex items-center gap-4">
             <div className="flex-1">
               <p className="tamil-text text-gray-900 font-medium text-lg mb-1">{s.tamil}</p>
-              <p className="text-sm text-orange-600 italic">{s.romanization}</p>
+              {showRomanization && <p className="text-sm text-orange-600 italic">{s.romanization}</p>}
               <p className="text-sm text-gray-500">{s.english}</p>
             </div>
             <AudioButton text={s.tamil} size="md" />
@@ -85,6 +87,7 @@ export default function ReadingPage() {
       </div>
 
       <div className="flex gap-3">
+        <Link href="/learn/intermediate/combined" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← Combined Letters</Link>
         <Link href="/learn/intermediate/parts-of-speech" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Next: Parts of Speech →
         </Link>

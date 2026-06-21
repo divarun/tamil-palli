@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useProgress } from "@/hooks/useProgress";
 import { AudioButton } from "@/components/AudioButton";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const tamilToEnglish = [
@@ -54,6 +55,7 @@ export default function TranslationPage() {
   const [revealed, setRevealed] = useState<Record<number, boolean>>({});
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("exp-translation");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -77,7 +79,7 @@ export default function TranslationPage() {
                 <p className="tamil-text text-gray-900 text-lg leading-relaxed mb-1">{item.tamil}</p>
                 <div className="flex items-center gap-2 mt-2">
                   <AudioButton text={item.tamil} />
-                  <p className="text-xs text-gray-400 italic">{item.romanization}</p>
+                  {showRomanization && <p className="text-xs text-gray-400 italic">{item.romanization}</p>}
                 </div>
               </div>
               {revealed[i] ? (

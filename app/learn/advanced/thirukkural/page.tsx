@@ -3,11 +3,13 @@
 import { selectedKurals } from "@/data/thirukkural/selected";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 export default function ThirukkuralPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("adv-thirukkural");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -54,10 +56,12 @@ export default function ThirukkuralPage() {
               </div>
             </div>
             {/* Transliteration */}
-            <div className="mb-3 text-sm text-orange-600 italic">
-              <p>{kural.transliteration1}</p>
-              <p>{kural.transliteration2}</p>
-            </div>
+            {showRomanization && (
+              <div className="mb-3 text-sm text-orange-600 italic">
+                <p>{kural.transliteration1}</p>
+                <p>{kural.transliteration2}</p>
+              </div>
+            )}
             {/* Meaning */}
             <div className="space-y-2">
               <div>

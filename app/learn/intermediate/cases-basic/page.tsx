@@ -3,6 +3,7 @@
 import { cases } from "@/data/grammar/cases";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const basicCases = cases.filter((c) => c.number <= 4);
@@ -10,6 +11,7 @@ const basicCases = cases.filter((c) => c.number <= 4);
 export default function CasesBasicPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("int-cases4");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -56,7 +58,7 @@ export default function CasesBasicPage() {
                 <div key={ex.tamil} className="flex items-center gap-3 bg-gray-50 rounded-lg p-3">
                   <div className="flex-1">
                     <div className="tamil-text text-gray-800 font-medium">{ex.tamil}</div>
-                    <div className="text-xs text-orange-600">{ex.romanization}</div>
+                    {showRomanization && <div className="text-xs text-orange-600">{ex.romanization}</div>}
                     <div className="text-xs text-gray-500">{ex.english}</div>
                   </div>
                   <AudioButton text={ex.tamil} size="sm" />
@@ -68,11 +70,9 @@ export default function CasesBasicPage() {
       </div>
 
       <div className="flex gap-3 mt-8">
+        <Link href="/learn/intermediate/gender" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← Gender</Link>
         <Link href="/learn/intermediate/food" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Next: Food Vocabulary →
-        </Link>
-        <Link href="/learn/advanced/cases-all" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">
-          All 8 Cases (Advanced) →
         </Link>
       </div>
     </div>

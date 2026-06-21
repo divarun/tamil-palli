@@ -4,11 +4,13 @@ import { vowels, shortLongPairs } from "@/data/letters/vowels";
 import { LetterCard } from "@/components/LetterCard";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 export default function VowelsPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("novice-vowels");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -34,16 +36,18 @@ export default function VowelsPage() {
       </div>
 
       {/* Romanization Key */}
-      <section className="mb-8 bg-amber-50 border border-amber-200 rounded-xl p-4">
-        <h2 className="text-sm font-semibold text-amber-800 mb-2">Romanization Key — used throughout this app</h2>
-        <ul className="text-xs text-amber-700 space-y-1">
-          <li><span className="font-mono font-bold">aa / ii / uu</span> — double letter = long vowel (e.g., aa = ஆ, ii = ஈ, uu = ஊ)</li>
-          <li><span className="font-mono font-bold">zh</span> — the unique Tamil retroflex approximant (ழ) — no English equivalent</li>
-          <li><span className="font-mono font-bold">N</span> (capital) — retroflex nasal (ண), distinct from dental <span className="font-mono">n</span> (ந)</li>
-          <li><span className="font-mono font-bold">ṉ</span> — alveolar nasal (ன), distinct from dental <span className="font-mono">n</span> (ந)</li>
-          <li><span className="font-mono font-bold">L</span> (capital) — retroflex lateral (ள), distinct from dental <span className="font-mono">l</span> (ல)</li>
-        </ul>
-      </section>
+      {showRomanization && (
+        <section className="mb-8 bg-amber-50 border border-amber-200 rounded-xl p-4">
+          <h2 className="text-sm font-semibold text-amber-800 mb-2">Romanization Key — used throughout this app</h2>
+          <ul className="text-xs text-amber-700 space-y-1">
+            <li><span className="font-mono font-bold">aa / ii / uu</span> — double letter = long vowel (e.g., aa = ஆ, ii = ஈ, uu = ஊ)</li>
+            <li><span className="font-mono font-bold">zh</span> — the unique Tamil retroflex approximant (ழ) — no English equivalent</li>
+            <li><span className="font-mono font-bold">N</span> (capital) — retroflex nasal (ண), distinct from dental <span className="font-mono">n</span> (ந)</li>
+            <li><span className="font-mono font-bold">ṉ</span> — alveolar nasal (ன), distinct from dental <span className="font-mono">n</span> (ந)</li>
+            <li><span className="font-mono font-bold">L</span> (capital) — retroflex lateral (ள), distinct from dental <span className="font-mono">l</span> (ல)</li>
+          </ul>
+        </section>
+      )}
 
       {/* Short/Long Pairs */}
       <section className="mb-8">
@@ -55,13 +59,13 @@ export default function VowelsPage() {
               <div className="flex justify-center gap-3 mb-2">
                 <div>
                   <div className="text-3xl tamil-text font-bold text-gray-800">{pair.short}</div>
-                  <div className="text-xs text-orange-600">{pair.shortRoman}</div>
+                  {showRomanization && <div className="text-xs text-orange-600">{pair.shortRoman}</div>}
                   <div className="text-xs text-gray-400">short</div>
                 </div>
                 <div className="text-gray-300 self-center">↔</div>
                 <div>
                   <div className="text-3xl tamil-text font-bold text-gray-800">{pair.long}</div>
-                  <div className="text-xs text-orange-600">{pair.longRoman}</div>
+                  {showRomanization && <div className="text-xs text-orange-600">{pair.longRoman}</div>}
                   <div className="text-xs text-gray-400">long</div>
                 </div>
               </div>
@@ -77,7 +81,7 @@ export default function VowelsPage() {
           {vowels.map((v) => (
             <div key={v.tamil} className="rounded-2xl border-2 border-orange-100 bg-white p-4 flex flex-col items-center text-center gap-2">
               <span className="text-6xl tamil-text font-bold text-gray-800 leading-none">{v.tamil}</span>
-              <span className="text-orange-600 font-medium text-sm">{v.romanization}</span>
+              {showRomanization && <span className="text-orange-600 font-medium text-sm">{v.romanization}</span>}
               <span className={`text-xs px-2 py-0.5 rounded-full ${v.length === "short" ? "bg-blue-50 text-blue-600" : v.length === "long" ? "bg-amber-50 text-amber-600" : "bg-purple-50 text-purple-600"}`}>
                 {v.length === "short" ? "குறில் short" : v.length === "long" ? "நெடில் long" : "மிகு diphthong"}
               </span>
@@ -108,12 +112,12 @@ export default function VowelsPage() {
             <div key={pair.short} className="bg-white border border-orange-100 rounded-xl p-3 flex gap-4">
               <div className="flex-1 text-center border-r border-gray-100 pr-3">
                 <div className="text-2xl tamil-text font-bold text-blue-700">{pair.short}</div>
-                <div className="text-xs text-blue-500">{pair.shortRom} (short)</div>
+                {showRomanization && <div className="text-xs text-blue-500">{pair.shortRom} (short)</div>}
                 <div className="text-xs text-gray-600 mt-1">{pair.shortMeaning}</div>
               </div>
               <div className="flex-1 text-center pl-1">
                 <div className="text-2xl tamil-text font-bold text-amber-700">{pair.long}</div>
-                <div className="text-xs text-amber-500">{pair.longRom} (long)</div>
+                {showRomanization && <div className="text-xs text-amber-500">{pair.longRom} (long)</div>}
                 <div className="text-xs text-gray-600 mt-1">{pair.longMeaning}</div>
               </div>
             </div>

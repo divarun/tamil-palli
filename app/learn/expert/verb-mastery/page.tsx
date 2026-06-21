@@ -2,6 +2,7 @@
 
 import { useProgress } from "@/hooks/useProgress";
 import { AudioButton } from "@/components/AudioButton";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const verbalParticiples = [
@@ -30,6 +31,7 @@ const negativeVerbs = [
 export default function VerbMasteryPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("exp-verb-mastery");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -55,7 +57,7 @@ export default function VerbMasteryPage() {
                 </div>
                 <div className="flex-1">
                   <div className="flex gap-3 flex-wrap mb-1">
-                    <span className="text-sm text-gray-500">{vp.romanization}</span>
+                    {showRomanization && <span className="text-sm text-gray-500">{vp.romanization}</span>}
                     <span className="text-xs bg-rose-100 text-rose-700 px-2 py-0.5 rounded-full">{vp.type}</span>
                   </div>
                   <p className="text-sm text-gray-700">Root: <span className="tamil-text">{vp.root}</span> → <em>{vp.meaning}</em></p>
@@ -77,7 +79,7 @@ export default function VerbMasteryPage() {
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-2xl tamil-text font-bold text-gray-900">{vn.form}</span>
                 <AudioButton text={vn.form} />
-                <span className="text-sm text-gray-500 ml-1">{vn.romanization}</span>
+                {showRomanization && <span className="text-sm text-gray-500 ml-1">{vn.romanization}</span>}
               </div>
               <p className="text-sm text-gray-600">Root: <span className="tamil-text font-medium">{vn.root}</span></p>
               <p className="text-sm text-gray-700 mb-1">{vn.meaning}</p>
@@ -105,11 +107,11 @@ export default function VerbMasteryPage() {
                 <tr key={row.positive} className="border-b border-rose-50">
                   <td className="p-3 border border-rose-100">
                     <span className="tamil-text text-base">{row.positive}</span>
-                    <span className="text-xs text-gray-400 block">{row.romanization}</span>
+                    {showRomanization && <span className="text-xs text-gray-400 block">{row.romanization}</span>}
                   </td>
                   <td className="p-3 border border-rose-100">
                     <span className="tamil-text text-base text-red-700">{row.negative}</span>
-                    <span className="text-xs text-gray-400 block">{row.negRom}</span>
+                    {showRomanization && <span className="text-xs text-gray-400 block">{row.negRom}</span>}
                   </td>
                   <td className="p-3 border border-rose-100 text-gray-600 text-xs">{row.meaning}</td>
                 </tr>

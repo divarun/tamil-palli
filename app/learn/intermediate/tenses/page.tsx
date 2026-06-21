@@ -3,6 +3,7 @@
 import { tenses, pronounsWithTenses } from "@/data/grammar/tenses";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const tenseColors = {
@@ -14,6 +15,7 @@ const tenseColors = {
 export default function TensesPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("int-tenses");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -54,7 +56,7 @@ export default function TensesPage() {
                   <div key={ex.tamil} className="flex items-center gap-3 bg-white rounded-lg p-3 border border-white/60">
                     <div className="flex-1">
                       <div className="tamil-text text-gray-800 font-medium">{ex.tamil}</div>
-                      <div className="text-xs text-orange-600">{ex.romanization}</div>
+                      {showRomanization && <div className="text-xs text-orange-600">{ex.romanization}</div>}
                       <div className="text-xs text-gray-500">{ex.english}</div>
                     </div>
                     <AudioButton text={ex.tamil} size="sm" />
@@ -126,6 +128,7 @@ export default function TensesPage() {
       </div>
 
       <div className="flex gap-3">
+        <Link href="/learn/intermediate/parts-of-speech" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← Parts of Speech</Link>
         <Link href="/exercises/intermediate/fill-blank" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Practice Exercises →
         </Link>

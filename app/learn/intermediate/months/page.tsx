@@ -3,11 +3,13 @@
 import { tamilMonths, englishMonthsInTamil, seasons } from "@/data/vocabulary/intermediate";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 export default function MonthsPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("int-months");
+  const { showRomanization } = useTransliteration();
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-2 flex items-center gap-2 text-sm text-gray-500">
@@ -28,7 +30,7 @@ export default function MonthsPage() {
           <div key={item.tamil} className="bg-amber-50 border border-amber-100 rounded-xl p-3 flex items-center gap-2">
             <div className="flex-1">
               <div className="tamil-text font-bold text-gray-900">{item.tamil}</div>
-              <div className="text-xs text-orange-600">{item.romanization}</div>
+              {showRomanization && <div className="text-xs text-orange-600">{item.romanization}</div>}
               <div className="text-xs text-gray-500">{item.english}</div>
             </div>
             <AudioButton text={item.tamil} size="sm" />
@@ -41,7 +43,7 @@ export default function MonthsPage() {
           <div key={item.tamil} className="bg-blue-50 border border-blue-100 rounded-xl p-3 flex items-center gap-2">
             <div className="flex-1">
               <div className="tamil-text font-bold text-gray-900">{item.tamil}</div>
-              <div className="text-xs text-orange-600">{item.romanization}</div>
+              {showRomanization && <div className="text-xs text-orange-600">{item.romanization}</div>}
               <div className="text-xs text-gray-500">{item.english}</div>
             </div>
             <AudioButton text={item.tamil} size="sm" />
@@ -54,7 +56,7 @@ export default function MonthsPage() {
           <div key={item.tamil} className="bg-emerald-50 border border-emerald-100 rounded-xl p-3 flex items-center gap-2">
             <div className="flex-1">
               <div className="tamil-text font-bold text-gray-900">{item.tamil}</div>
-              <div className="text-xs text-orange-600">{item.romanization}</div>
+              {showRomanization && <div className="text-xs text-orange-600">{item.romanization}</div>}
               <div className="text-xs text-gray-500">{item.english}</div>
             </div>
             <AudioButton text={item.tamil} size="sm" />
@@ -62,6 +64,7 @@ export default function MonthsPage() {
         ))}
       </div>
       <div className="flex gap-3">
+        <Link href="/learn/intermediate/days" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← Days of Week</Link>
         <Link href="/learn/intermediate/phrases" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">Next: Phrases →</Link>
       </div>
     </div>

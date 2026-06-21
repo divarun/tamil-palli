@@ -3,6 +3,7 @@
 import { consonants, groupLabels, type ConsonantGroup } from "@/data/letters/consonants";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const groups: ConsonantGroup[] = ["vallinam", "mellinam", "idaiyinam"];
@@ -16,6 +17,7 @@ const groupColors: Record<ConsonantGroup, { bg: string; border: string; badge: s
 export default function ConsonantsPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("novice-consonants");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -39,9 +41,12 @@ export default function ConsonantsPage() {
           {done ? "✓ Completed" : "Mark Complete"}
         </button>
       </div>
-      <p className="text-xs text-gray-500 mb-6">
-        Romanization uses capital letters for retroflex sounds: <span className="font-mono">N</span> = ண, <span className="font-mono">L</span> = ள, <span className="font-mono">ṉ</span> = ன, <span className="font-mono">zh</span> = ழ. See the full{" "}
-        <Link href="/learn/novice/vowels" className="text-orange-600 underline">Romanization Key</Link> on the Vowels page.</p>
+      {showRomanization && (
+        <p className="text-xs text-gray-500 mb-6">
+          Romanization uses capital letters for retroflex sounds: <span className="font-mono">N</span> = ண, <span className="font-mono">L</span> = ள, <span className="font-mono">ṉ</span> = ன, <span className="font-mono">zh</span> = ழ. See the full{" "}
+          <Link href="/learn/novice/vowels" className="text-orange-600 underline">Romanization Key</Link> on the Vowels page.
+        </p>
+      )}
 
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 text-sm text-amber-800">
         <strong>Note:</strong> Each consonant is shown in its pure form with the pulli (்) — e.g. க் is the pure consonant "k". When a consonant combines with a vowel it becomes an உயிர்மெய் (e.g. க் + அ = க, க் + ஆ = கா). You'll learn all 216 combinations in the Combined Letters lesson.
@@ -63,7 +68,7 @@ export default function ConsonantsPage() {
               {groupConsonants.map((c) => (
                 <div key={c.tamil} className="rounded-xl border border-gray-200 bg-white p-4 flex flex-col items-center text-center gap-2">
                   <span className="text-5xl tamil-text font-bold text-gray-800 leading-none">{c.tamil}்</span>
-                  <span className="text-orange-600 font-medium text-sm">{c.romanization}</span>
+                  {showRomanization && <span className="text-orange-600 font-medium text-sm">{c.romanization}</span>}
                   <div className="text-xs text-gray-500 italic">{c.tip}</div>
                   <div className="text-xs text-gray-700">
                     <span className="tamil-text">{c.example}</span>
@@ -106,6 +111,7 @@ export default function ConsonantsPage() {
       </section>
 
       <div className="flex gap-3 mt-6">
+        <Link href="/learn/novice/vowels" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← Vowels</Link>
         <Link href="/exercises/novice/letter-recognition" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Practice Exercises →
         </Link>

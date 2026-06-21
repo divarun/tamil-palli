@@ -2,6 +2,7 @@
 
 import { useProgress } from "@/hooks/useProgress";
 import { AudioButton } from "@/components/AudioButton";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const complexExamples = [
@@ -15,6 +16,7 @@ const complexExamples = [
 export default function ComplexSentencesPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("adv-complex-sentences");
+  const { showRomanization } = useTransliteration();
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-2 flex items-center gap-2 text-sm text-gray-500">
@@ -36,7 +38,7 @@ export default function ComplexSentencesPage() {
             <div className="flex items-center gap-3 mt-3">
               <div className="flex-1">
                 <p className="tamil-text text-gray-900 font-medium text-lg">{ex.tamil}</p>
-                <p className="text-sm text-orange-600 italic">{ex.romanization}</p>
+                {showRomanization && <p className="text-sm text-orange-600 italic">{ex.romanization}</p>}
                 <p className="text-sm text-gray-500">{ex.english}</p>
               </div>
               <AudioButton text={ex.tamil} size="md" />

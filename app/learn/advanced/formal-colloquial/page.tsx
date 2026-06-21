@@ -1,6 +1,7 @@
 "use client";
 
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const comparisons = [
@@ -23,6 +24,7 @@ const comparisons = [
 export default function FormalColloquialPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("adv-formal-vs-colloquial");
+  const { showRomanization } = useTransliteration();
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-2 flex items-center gap-2 text-sm text-gray-500">
@@ -57,11 +59,11 @@ export default function FormalColloquialPage() {
                 <td className="p-3 text-gray-600 font-medium">{row.context}</td>
                 <td className="p-3">
                   <div className="tamil-text text-blue-900 font-medium">{row.formal}</div>
-                  <div className="text-xs text-blue-500">{row.fRoman}</div>
+                  {showRomanization && <div className="text-xs text-blue-500">{row.fRoman}</div>}
                 </td>
                 <td className="p-3">
                   <div className="tamil-text text-emerald-900 font-medium">{row.colloquial}</div>
-                  <div className="text-xs text-emerald-500">{row.cRoman}</div>
+                  {showRomanization && <div className="text-xs text-emerald-500">{row.cRoman}</div>}
                   <div className="text-xs text-gray-400 mt-1">{row.note}</div>
                 </td>
               </tr>

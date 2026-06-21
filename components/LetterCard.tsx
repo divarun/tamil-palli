@@ -1,6 +1,7 @@
 "use client";
 
 import { AudioButton } from "./AudioButton";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 
 type Props = {
   tamil: string;
@@ -19,6 +20,7 @@ const sizeMap = {
 
 export function LetterCard({ tamil, romanization, label, sublabel, highlight = false, size = "md" }: Props) {
   const sz = sizeMap[size];
+  const { showRomanization } = useTransliteration();
   return (
     <div
       className={`rounded-2xl border-2 flex flex-col items-center gap-1 text-center transition-all ${
@@ -28,7 +30,7 @@ export function LetterCard({ tamil, romanization, label, sublabel, highlight = f
       <span className={`font-bold leading-none text-gray-800 ${sz.letter}`} style={{ fontFamily: "'Noto Sans Tamil', serif" }}>
         {tamil}
       </span>
-      <span className={`text-orange-600 font-medium ${sz.roman}`}>{romanization}</span>
+      {showRomanization && <span className={`text-orange-600 font-medium ${sz.roman}`}>{romanization}</span>}
       {label && <span className="text-gray-500 text-xs">{label}</span>}
       {sublabel && <span className="text-gray-400 text-xs">{sublabel}</span>}
       <AudioButton text={tamil} size="sm" />

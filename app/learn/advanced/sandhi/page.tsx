@@ -3,11 +3,13 @@
 import { sandhiRules } from "@/data/grammar/sandhi";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 export default function SandhiPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("adv-sandhi");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -51,7 +53,7 @@ export default function SandhiPage() {
                   <div className="text-gray-500 mb-1">{ex.before}</div>
                   <div className="flex items-center gap-3">
                     <span className="tamil-text font-bold text-gray-900 text-lg">{ex.after}</span>
-                    <span className="text-orange-600 text-xs">{ex.romanization}</span>
+                    {showRomanization && <span className="text-orange-600 text-xs">{ex.romanization}</span>}
                     <span className="text-gray-500 text-xs">— {ex.english}</span>
                     <AudioButton text={ex.after} size="sm" className="ml-auto" />
                   </div>

@@ -3,11 +3,13 @@
 import { aytham } from "@/data/letters/aytham";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 export default function AythamPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("novice-aytham");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -35,7 +37,7 @@ export default function AythamPage() {
       {/* Hero letter */}
       <div className="flex flex-col items-center bg-white rounded-2xl border-2 border-orange-200 p-8 mb-8">
         <span className="text-9xl tamil-text font-bold text-gray-800 leading-none mb-4">{aytham.tamil}</span>
-        <span className="text-orange-600 font-medium text-xl mb-2">{aytham.romanization}</span>
+        {showRomanization && <span className="text-orange-600 font-medium text-xl mb-2">{aytham.romanization}</span>}
         <AudioButton text={aytham.tamil} size="lg" />
       </div>
 
@@ -56,7 +58,7 @@ export default function AythamPage() {
           <div key={ex.word} className="flex items-center gap-4 bg-white border border-orange-100 rounded-xl p-4">
             <span className="text-3xl tamil-text font-bold text-gray-800">{ex.word}</span>
             <div className="flex-1">
-              <div className="text-sm text-orange-600 font-medium">{ex.romanization}</div>
+              {showRomanization && <div className="text-sm text-orange-600 font-medium">{ex.romanization}</div>}
               <div className="text-sm text-gray-500">{ex.meaning}</div>
             </div>
             <AudioButton text={ex.word} />
@@ -77,6 +79,7 @@ export default function AythamPage() {
       </div>
 
       <div className="flex gap-3">
+        <Link href="/learn/novice/consonants" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← Consonants</Link>
         <Link href="/learn/novice/numbers" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Next: Numbers →
         </Link>

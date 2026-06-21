@@ -2,6 +2,7 @@
 
 import { useProgress } from "@/hooks/useProgress";
 import { AudioButton } from "@/components/AudioButton";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const sentencePatterns = [
@@ -19,6 +20,7 @@ const practiceTemplates = [
 export default function SentencesPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("int-sentences");
+  const { showRomanization } = useTransliteration();
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-2 flex items-center gap-2 text-sm text-gray-500">
@@ -84,7 +86,7 @@ export default function SentencesPage() {
             <div key={pp.tamil} className="bg-white border border-orange-100 rounded-xl p-3">
               <div className="flex items-baseline gap-2 mb-1">
                 <span className="tamil-text font-bold text-gray-900">{pp.tamil}</span>
-                <span className="text-xs text-orange-500">{pp.rom}</span>
+                {showRomanization && <span className="text-xs text-orange-500">{pp.rom}</span>}
                 <span className="text-xs text-gray-500">— {pp.meaning}</span>
               </div>
               <p className="text-xs text-gray-400 tamil-text">{pp.example}</p>
@@ -108,7 +110,7 @@ export default function SentencesPage() {
               <span className="tamil-text text-gray-500 w-24">{ex.base} + உம்</span>
               <span className="text-gray-400">→</span>
               <span className="tamil-text font-bold text-gray-900">{ex.withum}</span>
-              <span className="text-xs text-orange-600">{ex.rom}</span>
+              {showRomanization && <span className="text-xs text-orange-600">{ex.rom}</span>}
               <span className="text-xs text-gray-500 ml-auto">{ex.meaning}</span>
             </div>
           ))}

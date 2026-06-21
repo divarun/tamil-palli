@@ -3,11 +3,13 @@
 import { numbers } from "@/data/vocabulary/novice";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 export default function NumbersPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("novice-numbers");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -35,7 +37,7 @@ export default function NumbersPage() {
         {numbers.map((num) => (
           <div key={num.tamil} className="bg-white border border-orange-100 rounded-xl p-3 flex flex-col items-center gap-1 text-center">
             <span className="text-2xl tamil-text font-bold text-gray-800 leading-tight">{num.tamil}</span>
-            <div className="text-xs text-orange-600 font-medium">{num.romanization}</div>
+            {showRomanization && <div className="text-xs text-orange-600 font-medium">{num.romanization}</div>}
             <div className="text-xs text-gray-500">{num.english}</div>
             <AudioButton text={num.tamil} size="sm" />
           </div>
@@ -81,6 +83,7 @@ export default function NumbersPage() {
       </div>
 
       <div className="flex gap-3 mt-6">
+        <Link href="/learn/novice/aytham" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← Aytham</Link>
         <Link href="/exercises/novice/letter-recognition" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Practice →
         </Link>

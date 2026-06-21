@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
+import { TransliterationProvider } from "@/contexts/TransliterationContext";
 
 export const metadata: Metadata = {
   title: "Tamil Palli — தமிழ் பள்ளி",
@@ -16,11 +17,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wdth,wght@100,100..900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
       </head>
       <body className="min-h-full flex flex-col bg-amber-50 font-sans antialiased">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <footer className="border-t border-orange-100 bg-white py-4 text-center text-xs text-gray-400">
-          Tamil Palli · தமிழ் பள்ளி · Built for learners
-        </footer>
+        <TransliterationProvider>
+          <Nav />
+          <main className="flex-1">{children}</main>
+          <footer className="border-t border-orange-100 bg-white py-4 text-center text-xs text-gray-400">
+            Tamil Palli · தமிழ் பள்ளி · Built for learners
+          </footer>
+        </TransliterationProvider>
       </body>
     </html>
   );

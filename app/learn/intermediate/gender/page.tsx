@@ -3,6 +3,7 @@
 import { genderRules, highClassVsLowClass } from "@/data/grammar/gender";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const genderColors = {
@@ -14,6 +15,7 @@ const genderColors = {
 export default function GenderPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("int-gender");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -67,7 +69,7 @@ export default function GenderPage() {
                   <div key={ex.tamil} className="flex items-center gap-3 bg-white rounded-lg p-3">
                     <div className="flex-1">
                       <div className="tamil-text text-gray-800 font-medium">{ex.tamil}</div>
-                      <div className="text-xs text-orange-600">{ex.romanization}</div>
+                      {showRomanization && <div className="text-xs text-orange-600">{ex.romanization}</div>}
                       <div className="text-xs text-gray-500">{ex.english}</div>
                     </div>
                     <AudioButton text={ex.tamil} size="sm" />
@@ -80,6 +82,7 @@ export default function GenderPage() {
       </div>
 
       <div className="flex gap-3 mt-8">
+        <Link href="/learn/intermediate/tenses" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← 3 Tenses</Link>
         <Link href="/learn/intermediate/cases-basic" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Next: First 4 Cases →
         </Link>

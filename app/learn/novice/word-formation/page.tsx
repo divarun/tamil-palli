@@ -5,6 +5,7 @@ import { consonants } from "@/data/letters/consonants";
 import { getCombined, vowelOrder, consonantOrder } from "@/data/letters/combined";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const exampleWords = [
@@ -19,6 +20,7 @@ const exampleWords = [
 export default function WordFormationPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("novice-word-formation");
+  const { showRomanization } = useTransliteration();
 
   // Show a small 4×5 grid preview
   const previewConsonants = consonantOrder.slice(0, 4);
@@ -69,7 +71,7 @@ export default function WordFormationPage() {
                 return (
                   <th key={v} className="w-16 p-2 border border-gray-200 bg-amber-50">
                     <div className="text-xl tamil-text font-bold text-amber-800">{v}</div>
-                    <div className="text-xs text-amber-600">{vowel?.romanization}</div>
+                    {showRomanization && <div className="text-xs text-amber-600">{vowel?.romanization}</div>}
                   </th>
                 );
               })}
@@ -82,7 +84,7 @@ export default function WordFormationPage() {
                 <tr key={c}>
                   <td className="p-2 border border-gray-200 bg-blue-50">
                     <div className="text-xl tamil-text font-bold text-blue-800">{c}்</div>
-                    <div className="text-xs text-blue-600">{con?.romanization}</div>
+                    {showRomanization && <div className="text-xs text-blue-600">{con?.romanization}</div>}
                   </td>
                   {previewVowels.map((v) => {
                     const combined = getCombined(c, v);
@@ -116,11 +118,9 @@ export default function WordFormationPage() {
       </div>
 
       <div className="flex gap-3">
+        <Link href="/learn/novice/questions" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← Question Words</Link>
         <Link href="/learn/novice/vada-ezhuthukal" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Next: Grantha Letters →
-        </Link>
-        <Link href="/learn/intermediate/combined" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">
-          All 216 Combined Letters →
         </Link>
       </div>
     </div>

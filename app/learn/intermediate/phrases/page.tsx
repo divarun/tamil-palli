@@ -3,6 +3,7 @@
 import { phrases, dialogues } from "@/data/vocabulary/phrases";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const contextColors: Record<string, string> = {
@@ -17,6 +18,7 @@ const contexts = Array.from(new Set(phrases.map((p) => p.context)));
 export default function PhrasesPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("int-phrases");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -52,7 +54,7 @@ export default function PhrasesPage() {
                 <div key={p.tamil} className={`flex items-center gap-4 rounded-xl border p-4 ${color}`}>
                   <div className="flex-1">
                     <p className="tamil-text text-gray-900 font-medium">{p.tamil}</p>
-                    <p className="text-sm text-orange-600 italic">{p.romanization}</p>
+                    {showRomanization && <p className="text-sm text-orange-600 italic">{p.romanization}</p>}
                     <p className="text-sm text-gray-500">{p.english}</p>
                   </div>
                   <AudioButton text={p.tamil} size="md" />
@@ -78,7 +80,7 @@ export default function PhrasesPage() {
                   </div>
                   <div className={`max-w-xs rounded-xl p-3 ${line.speaker === "A" ? "bg-blue-50 border border-blue-100" : "bg-emerald-50 border border-emerald-100"}`}>
                     <p className="tamil-text text-gray-800 font-medium text-sm">{line.tamil}</p>
-                    <p className="text-xs text-orange-600 italic">{line.romanization}</p>
+                    {showRomanization && <p className="text-xs text-orange-600 italic">{line.romanization}</p>}
                     <p className="text-xs text-gray-500">{line.english}</p>
                   </div>
                   <AudioButton text={line.tamil} size="sm" className="self-center" />
@@ -90,6 +92,7 @@ export default function PhrasesPage() {
       </div>
 
       <div className="flex gap-3">
+        <Link href="/learn/intermediate/months" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← Months</Link>
         <Link href="/learn/intermediate/proverbs" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Next: Tamil Proverbs →
         </Link>

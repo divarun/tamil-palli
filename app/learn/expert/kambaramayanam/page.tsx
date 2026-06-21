@@ -2,6 +2,7 @@
 
 import { useProgress } from "@/hooks/useProgress";
 import { AudioButton } from "@/components/AudioButton";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 const overview = {
@@ -60,6 +61,7 @@ const themes = [
 export default function KambaramayanamPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("exp-kambaramayanam");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -122,7 +124,7 @@ export default function KambaramayanamPage() {
             <div key={i} className="bg-amber-50 border border-amber-100 rounded-xl p-5">
               <p className="text-xs text-amber-700 font-medium mb-2">{v.source}</p>
               <p className="tamil-text text-gray-900 text-base leading-relaxed mb-2 whitespace-pre-line">{v.tamil}</p>
-              <p className="text-sm text-gray-500 italic mb-2">{v.romanization}</p>
+              {showRomanization && <p className="text-sm text-gray-500 italic mb-2">{v.romanization}</p>}
               <p className="text-sm text-gray-700">{v.meaning}</p>
             </div>
           ))}

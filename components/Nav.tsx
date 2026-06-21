@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 
 const links = [
   { href: "/", label: "Home" },
@@ -12,6 +13,7 @@ const links = [
 
 export function Nav() {
   const pathname = usePathname();
+  const { showRomanization, toggleRomanization } = useTransliteration();
 
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -35,6 +37,17 @@ export function Nav() {
               </Link>
             );
           })}
+          <button
+            onClick={toggleRomanization}
+            title={showRomanization ? "Hide romanization" : "Show romanization"}
+            className={`ml-2 px-3 py-1.5 rounded-md text-sm font-medium transition-colors border ${
+              showRomanization
+                ? "border-orange-300 bg-orange-50 text-orange-700"
+                : "border-gray-200 text-gray-400 hover:text-gray-600 hover:bg-gray-50"
+            }`}
+          >
+            az
+          </button>
         </div>
       </div>
     </nav>

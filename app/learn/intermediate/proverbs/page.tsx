@@ -3,11 +3,13 @@
 import { proverbs } from "@/data/vocabulary/proverbs";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 export default function ProverbsPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("int-proverbs");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -42,7 +44,7 @@ export default function ProverbsPage() {
                   <p className="tamil-text text-lg font-bold text-gray-900 leading-snug flex-1">{proverb.tamil}</p>
                   <AudioButton text={proverb.tamil} size="sm" />
                 </div>
-                <p className="text-sm text-orange-600 italic mb-3">{proverb.romanization}</p>
+                {showRomanization && <p className="text-sm text-orange-600 italic mb-3">{proverb.romanization}</p>}
                 <div className="space-y-2">
                   <div>
                     <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Literal: </span>

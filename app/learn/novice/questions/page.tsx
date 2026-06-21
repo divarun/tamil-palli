@@ -3,11 +3,13 @@
 import { questionWords } from "@/data/vocabulary/novice";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 export default function QuestionsPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("novice-questions");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8">
@@ -36,7 +38,7 @@ export default function QuestionsPage() {
         {questionWords.map((item) => (
           <div key={item.tamil} className="flex flex-col items-center gap-1 text-center bg-white border border-orange-100 rounded-xl p-4">
             <span className="text-3xl tamil-text font-bold text-gray-800 leading-tight">{item.tamil}</span>
-            <div className="text-xs text-orange-600 font-medium">{item.romanization}</div>
+            {showRomanization && <div className="text-xs text-orange-600 font-medium">{item.romanization}</div>}
             <div className="text-sm text-gray-700 font-semibold">{item.english}</div>
             <AudioButton text={item.tamil} size="md" />
           </div>
@@ -51,6 +53,7 @@ export default function QuestionsPage() {
       </div>
 
       <div className="flex gap-3">
+        <Link href="/learn/novice/family" className="px-4 py-2 border border-orange-200 text-orange-700 rounded-xl text-sm font-medium hover:bg-orange-50 transition-colors">← Family</Link>
         <Link href="/learn/novice/word-formation" className="px-4 py-2 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
           Next: Word Formation →
         </Link>

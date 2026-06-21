@@ -3,11 +3,13 @@
 import { cases } from "@/data/grammar/cases";
 import { AudioButton } from "@/components/AudioButton";
 import { useProgress } from "@/hooks/useProgress";
+import { useTransliteration } from "@/contexts/TransliterationContext";
 import Link from "next/link";
 
 export default function CasesAllPage() {
   const { markTopicComplete, isTopicComplete } = useProgress();
   const done = isTopicComplete("adv-cases8");
+  const { showRomanization } = useTransliteration();
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
@@ -49,7 +51,7 @@ export default function CasesAllPage() {
                 <div key={ex.tamil} className="flex items-center gap-3 bg-gray-50 rounded-lg p-3">
                   <div className="flex-1">
                     <div className="tamil-text text-gray-800 font-medium">{ex.tamil}</div>
-                    <div className="text-xs text-orange-600">{ex.romanization}</div>
+                    {showRomanization && <div className="text-xs text-orange-600">{ex.romanization}</div>}
                     <div className="text-xs text-gray-500">{ex.english}</div>
                   </div>
                   <AudioButton text={ex.tamil} size="sm" />
